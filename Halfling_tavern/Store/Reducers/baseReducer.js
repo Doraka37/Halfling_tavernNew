@@ -1,64 +1,35 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const todosSlice = createSlice({
-  name: 'todos',
+const characterSlice = createSlice({
+  name: 'character',
   initialState: {
     race: "",
     clas: "",
-    skills: "",
+    skills: [],
     savings: [""],
     proficiencies: [""],
-    test: 25
+    abilities: []
   },
   reducers: {
     addSkill: (state, action) => {
-      state.skills = action.payload
+      state.skills = [action.payload, ...state.skills]
     },
-    todoToggled(state, action) {
-      const todo = state.find(todo => todo.id === action.payload)
-      todo.completed = !todo.completed
+    removeSkill: (state, action) => {
+      for (let index = 0; index < state.skills.length; index++) {
+        if (action.payload == state.skills[index]) {
+          state.skills.splice(index, 1)
+          return
+        }
+      }
+    },
+    addClass: (state, action) => {
+      state.clas = action.payload.clas
+      state.proficiencies = action.payload.proficiencies
+      state.savings = action.payload.savings
+      state.abilities = [action.payload.abilities, ...state.abilities]
     }
   }
 })
-
-const initialState = {
-    race: "",
-    clas: "",
-    skills: "",
-    savings: [""],
-    proficiencies: [""],
-    test: 25
-  };
   
-  function BaseReducer(state = initialState, action) {
-    let nextState = {};
-    switch (action.type) {
-      case 'SET_COURSE_SETTINGS':
-        nextState = {
-          ...state,
-          ...action.value
-      };
-      return nextState;
-      case 'SET_RACE':
-        nextState = {
-          ...state,
-          race: action.value
-      };
-      case 'SET_CLASS':
-        nextState = {
-          ...state,
-          clas: action.value.clas
-      };
-      case 'SET_SKILLS':
-        console.log("sETTING skill: ", action.value);
-        nextState = {
-          ...state,
-          skills: action.value
-      };
-      default:
-          return state;
-  }
-  }
-  
-  export const {addSkill } = todosSlice.actions
-  export default todosSlice.reducer;
+  export const {addSkill, removeSkill, addClass } = characterSlice.actions
+  export default characterSlice.reducer;

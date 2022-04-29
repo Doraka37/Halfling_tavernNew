@@ -7,18 +7,8 @@
  */
 
  import React from 'react';
- import type {Node} from 'react';
  import { Provider } from 'react-redux';
- import {store, persistor} from './Store/configureStore';
- import {
-   SafeAreaView,
-   Text,
-   View,
-   StyleSheet,
-   Image,
-   TouchableOpacity,
- } from 'react-native';
- import { SquircleView } from 'react-native-figma-squircle'
+ import {store} from './Store/configureStore';
  import { NavigationContainer } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
  import Race from './src/Pages/Race';

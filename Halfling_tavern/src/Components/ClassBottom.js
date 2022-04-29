@@ -1,15 +1,16 @@
 import React from 'react';
-import Store from '../../Store/configureStore';
+import { useSelector, useDispatch } from 'react-redux'
 
 import {
     Text,
     View,
     TouchableOpacity
   } from 'react-native';
+  import {addClass} from '../../Store/Reducers/baseReducer'
 
-function ClassBottom({clas, navigation}) {
-    const store = Store.getState();
-    console.log("store: ", store);
+function ClassBottom({clas, navigation, infos}) {
+    const count = useSelector((state) => state.character)
+    const dispatch = useDispatch()
     return (
         <View style={{
             flex: 0.1,
@@ -22,17 +23,14 @@ function ClassBottom({clas, navigation}) {
                     width: "80%",
                 }}
                 onPress={() => {
-                    console.log("store: ", store);
-                    console.log("setting class: ", clas)
-                    let action = {
-                        type: 'SET_CLASS',
-                        value: clas
-                    };
-                    Store.dispatch(action);
-                    /*navigation.navigate('Class', {
-                        race: race,
-                        raceId: id
-                    })*/
+                    console.log("count: ", count);
+                    let proficiencies = infos.stats.Proficiencies
+                    let savings = infos.stats.savings
+                    let abilities = []
+                    for (let index = 0; index < infos.Abilities.length; index++) {
+                        abilities.push(infos.Abilities[index].title)
+                    }
+                    dispatch(addClass({proficiencies: proficiencies, savings: savings, clas: clas, abilities: abilities}))
                 }
             }>
                 <View style={{

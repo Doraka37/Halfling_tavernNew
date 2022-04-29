@@ -14,6 +14,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-Halfling_tavern-Halfling_tavernTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Halfling_tavern-Halfling_tavernTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		5B2FA6DB3B3145CF91BD5D32 /* Ace_Records.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73DAA6D6B32348E4AC68B31B /* Ace_Records.ttf */; };
+		D9AD72ACD0DB4A20827D8E24 /* dungeon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F901FDDCDBDE417D96F15E97 /* dungeon.ttf */; };
+		B0487616809F4748B434D802 /* Libertine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A808AD7A7A574BF99CFDC627 /* Libertine.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Halfling_tavern/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Halfling_tavern-Halfling_tavernTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halfling_tavern-Halfling_tavernTests.release.xcconfig"; path = "Target Support Files/Pods-Halfling_tavern-Halfling_tavernTests/Pods-Halfling_tavern-Halfling_tavernTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		73DAA6D6B32348E4AC68B31B /* Ace_Records.ttf */ = {isa = PBXFileReference; name = "Ace_Records.ttf"; path = "../Ressources/Fonts/Ace_Records.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F901FDDCDBDE417D96F15E97 /* dungeon.ttf */ = {isa = PBXFileReference; name = "dungeon.ttf"; path = "../Ressources/Fonts/dungeon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A808AD7A7A574BF99CFDC627 /* Libertine.ttf */ = {isa = PBXFileReference; name = "Libertine.ttf"; path = "../Ressources/Fonts/Libertine.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				5BBECB5859B042498B18E1BD /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +154,17 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		5BBECB5859B042498B18E1BD /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				73DAA6D6B32348E4AC68B31B /* Ace_Records.ttf */,
+				F901FDDCDBDE417D96F15E97 /* dungeon.ttf */,
+				A808AD7A7A574BF99CFDC627 /* Libertine.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +262,9 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				5B2FA6DB3B3145CF91BD5D32 /* Ace_Records.ttf in Resources */,
+				D9AD72ACD0DB4A20827D8E24 /* dungeon.ttf in Resources */,
+				B0487616809F4748B434D802 /* Libertine.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

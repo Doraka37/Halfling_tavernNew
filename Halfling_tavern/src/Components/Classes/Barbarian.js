@@ -4,7 +4,8 @@ import {
     View,
     ScrollView,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    FlatList
   } from 'react-native';
 
 import Box from '../BoxComponnent';
@@ -19,6 +20,13 @@ var Image_array = [require("../../../Ressources/Half-Elf.png"), require("../../.
 
 function Barbarian({clas, race, navigation}) {
     let list = choicesToList(infos.Proficiencies.choices)
+
+    function renderItem({item}) {
+        return (
+            <Box title={item.title} desc={item.description}/>
+        );
+    }
+
     return (
         <View style={{
             flex: 100,
@@ -28,15 +36,17 @@ function Barbarian({clas, race, navigation}) {
             <ScrollView style={{
                 backgroundColor: "#032033",
                 flex: 80
-                }}>
-                <ClassTop race={race} clas={clas} image={require("../../../Ressources/guerrier.jpg")} description={"A fierce warrior of primitive background who can enter a battle rage"} stats={infos.stats} races={infos.races}/>
-                <Box title={infos.rage.title} desc={infos.rage.description}/>
-                <Box title={infos.UnarmoredDefense.title} desc={infos.UnarmoredDefense.description}/>
-                <Box title={infos.RecklessAttack.title} desc={infos.RecklessAttack.description}/>
-                <BoxList title={infos.HitPoints.title} desc={infos.HitPoints.description}/>
-                <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type}/>
+            }}>
+            <ClassTop race={race} clas={clas} image={require("../../../Ressources/guerrier.jpg")} description={"A fierce warrior of primitive background who can enter a battle rage"} stats={infos.stats} races={infos.races}/>
+            <FlatList
+                data={infos.Abilities}
+                renderItem={renderItem}
+                keyExtractor={item => item.title}
+            />
+            <BoxList title={infos.HitPoints.title} desc={infos.HitPoints.description}/>
+            <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type}/>
             </ScrollView>
-            <ClassBottom clas={clas} navigation={navigation}/>
+            <ClassBottom clas={clas} navigation={navigation} infos={infos}/>
         </View>
     );
 }

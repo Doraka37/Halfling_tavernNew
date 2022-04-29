@@ -7,14 +7,13 @@ import {
     TouchableOpacity
   } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-import Store from '../../Store/configureStore';
-import { useSelector, useDispatch } from 'react-redux'
-import {addSkill} from '../../Store/Reducers/baseReducer'
+import { useDispatch } from 'react-redux'
+import {addSkill, removeSkill} from '../../Store/Reducers/baseReducer'
 
 export function ChoiceBoxList({title, desc, choices, nb}) {
     const [refresh, setRefresh] = useState(false);
     const [extend, setExtend] = useState(true);
-    const store = Store.getState();
+    const [cmp, setCmp] = useState(0);
     const dispatch = useDispatch()
 
     function Check({item}) {
@@ -24,11 +23,19 @@ export function ChoiceBoxList({title, desc, choices, nb}) {
                 <CheckBox
                     value={item.checked}
                     onValueChange={(newValue) => {
-                        setRefresh(!refresh)
-                        console.log("item: ", item.label);
+                        if (newValue == false) {
+                            dispatch(removeSkill(item.label))
+                            setCmp(cmp - 1)
+                        }
+                        if (newValue == true) {
+                            if (cmp >= nb)
+                                return
+                            console.log("hello");
+                            dispatch(addSkill(item.label))
+                            setCmp(cmp + 1)
+                        }
                         item.checked = newValue
-                        dispatch(addSkill(item.label))
-                        console.log("store: ", store);
+                        setRefresh(!refresh)
                     }}
                     style={{alignSelf: "flex-start"}}
                     tintColors={{true: "green", false: "orange"}}
