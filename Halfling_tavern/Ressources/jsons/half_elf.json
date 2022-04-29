@@ -1,0 +1,30 @@
+{
+    "Abilities": [
+      {
+         "title":"Darkvision",
+         "description":"Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray.",
+         "choice": 0,
+         "level": 1
+      },
+      {
+         "title":"Fey Ancestry",
+         "description":"You have advantage on saving throws against being charmed, and magic cannot put you to sleep.",
+         "choice": 0,
+         "level": 1
+      }
+   ],
+     "AbilityScore":{
+      "title":"Ability Score Increase",
+      "description":"Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.",
+      "choice": 0,
+      "level": 1
+   },
+   "Languages":{
+      "title":"Languages",
+      "description":"You can speak, read, and write Common, Elvish, and one extra language of your choice.",
+      "choice": 0,
+      "choices": 1,
+      "type": "Languages",
+      "level": 1
+   }
+ }

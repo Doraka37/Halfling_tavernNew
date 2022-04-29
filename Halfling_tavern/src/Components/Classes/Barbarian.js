@@ -1,10 +1,7 @@
 import React from 'react';
 import {
-    Text,
     View,
     ScrollView,
-    Image,
-    TouchableOpacity,
     FlatList
   } from 'react-native';
 
@@ -15,8 +12,6 @@ import ClassBottom from '../ClassBottom';
 import infos from "../../../Ressources/jsons/barbarian.json"
 import { choicesToList } from '../../services/utils';
 import ClassTop from './ClassTop';
-
-var Image_array = [require("../../../Ressources/Half-Elf.png"), require("../../../Ressources/human.jpg"), require("../../../Ressources/dwarf.jpg"), require("../../../Ressources/gnome.png")]
 
 function Barbarian({clas, race, navigation}) {
     let list = choicesToList(infos.Proficiencies.choices)

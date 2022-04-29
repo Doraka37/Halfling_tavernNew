@@ -24,9 +24,9 @@ export function Box({title, desc}) {
                     setExtend(!extend)
                 }}>
                 <View>
-                        <Text style={{fontSize: 40, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center"}}>
-                            {title}
-                        </Text>
+                    <Text style={{fontSize: 40, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center"}}>
+                        {title}
+                    </Text>
                 </View>
             </TouchableOpacity>
             {extend == true && <View style={{

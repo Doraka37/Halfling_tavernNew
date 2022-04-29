@@ -8,9 +8,9 @@ import {
   } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { useDispatch } from 'react-redux'
-import {addSkill, removeSkill} from '../../Store/Reducers/baseReducer'
+import {addLanguage, addSkill, removeLanguage, removeSkill} from '../../Store/Reducers/baseReducer'
 
-export function ChoiceBoxList({title, desc, choices, nb}) {
+export function ChoiceBoxList({title, desc, choices, nb, type}) {
     const [refresh, setRefresh] = useState(false);
     const [extend, setExtend] = useState(true);
     const [cmp, setCmp] = useState(0);
@@ -24,14 +24,21 @@ export function ChoiceBoxList({title, desc, choices, nb}) {
                     value={item.checked}
                     onValueChange={(newValue) => {
                         if (newValue == false) {
-                            dispatch(removeSkill(item.label))
+                            if (type == "Skills")
+                                dispatch(removeSkill(item.label))
+                            if (type == "Languages")
+                                dispatch(removeLanguage(item.label))
                             setCmp(cmp - 1)
                         }
                         if (newValue == true) {
                             if (cmp >= nb)
                                 return
+                            if (type == "Skills")
+                                dispatch(addSkill(item.label))
+                            if (type == "Languages")
+                                dispatch(addLanguage(item.label))
                             console.log("hello");
-                            dispatch(addSkill(item.label))
+                            
                             setCmp(cmp + 1)
                         }
                         item.checked = newValue
