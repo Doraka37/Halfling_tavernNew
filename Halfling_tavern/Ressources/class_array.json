@@ -1,0 +1,5 @@
+{
+	"0": ["Barbarian", "Sorcier", "Barde", "Rodeur"],
+	"1": ["Sorcier", "Rodeur", "Barde", "Barbarian"],
+	"2": ["Barde", "Sorcier", "Barbarian", "Rodeur"]
+}
