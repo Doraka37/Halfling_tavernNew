@@ -1,8 +1,9 @@
 {
     "stats": {
-      "HitDice": "1d20",
-      "Primary": "Streght",
-      "Saves": "Streght & Constitution",
+      "HitDice": "1d12",
+      "Primary": "Strenght",
+      "Saves": "Strenght & Constitution",
+      "SavesFormatted": ["Strenght", "Constitution"],
       "Proficiencies": ["Light armor", "medium armor", "shields", "Simple weapons", "martial weapons"]
     },
     "races": ["Half-Elf"],

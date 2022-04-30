@@ -1,4 +1,7 @@
 {
+   "Race": "Half-Elf",
+   "id": 0,
+   "Description": "Half-elves combine what some say are the best qualities of their elf and human parents.",
     "Abilities": [
       {
          "title":"Darkvision",
@@ -26,22 +29,16 @@
          "choices": ["Dwarvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc"],
          "type": "Languages",
          "level": 1
+      },
+      {
+         "title":"Ability Score Increase",
+         "description":"Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.",
+         "choice": 2,
+         "choices": ["Constitution", "Dexterity", "Intelligence", "Strength", "Wisdom"],
+         "level": 1,
+         "type": "AbilityScore"
       }
    ],
-     "AbilityScore":{
-      "title":"Ability Score Increase",
-      "description":"Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.",
-      "choice": 2,
-      "choices": ["Constitution", "Dexterity", "Intelligence", "Strength", "Wisdom"],
-      "level": 1,
-      "type": "AbilityScore"
-   },
-   "Languages":{
-      "title":"Languages",
-      "description":"You can speak, read, and write Common, Elvish, and one extra language of your choice.",
-      "choice": 1,
-      "choices": 1,
-      "type": "Languages",
-      "level": 1
-   }
+   "Languages": ["Common", "Elvish"],
+   "Speed": 9
  }

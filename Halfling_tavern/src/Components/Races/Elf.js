@@ -9,7 +9,9 @@ import {
 
 import RaceBottom from '../RaceBottom';
 import Eladrin from './SubRaces/Eladrin';
-import Half_Elf from './Half_Elf';
+import RaceDisplay from './RaceDisplay';
+import infos from "../../../Ressources/jsons/elf.json"
+import half_elf from "../../../Ressources/jsons/half_elf.json"
 
 function Elf({id, race, navigation}) {
 
@@ -18,9 +20,9 @@ function Elf({id, race, navigation}) {
     function SubRaceComponnent({id, race, navigation}) {
         switch(sub){
             case 0:
-                return <Eladrin race={"Eladrin"} id={id} navigation={navigation}/>
+                return <RaceDisplay race={infos.SubRaces[id].Race} id={id} navigation={navigation} infos={infos.SubRaces[id]}/>
             case 1:
-                return <Half_Elf race={"High Elf"} id={id} navigation={navigation}/>
+                return <RaceDisplay race={infos.SubRaces[id].Race} id={id} navigation={navigation} infos={infos.SubRaces[id]}/>
             default:
                 return <View style={{
                     backgroundColor: "#330606",
@@ -70,16 +72,17 @@ function Elf({id, race, navigation}) {
                     alignItems: "center", justifyContent: "center", marginBottom: 20
                 }}>
                     <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center", color: "white"}}>
-                    Elves are a magical people of otherworldly grace, living in the world but not entirely part of it.
+                        {infos.Description}
                     </Text>
                 </View>
-                <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}>
+                <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 10, color: "white"}}>
                     This class comport several subraces
                 </Text>
-                <SafeAreaView style={{flex: 1000, flexDirection: "row"}}>
-                    <SubRaceSelec race={"Eladrin"} id={0}/>
-                    <SubRaceSelec race={"High-Elf"} id={1}/>
-                    <SubRaceSelec race={"Wood-Elf"} id={2}/>
+                <SafeAreaView style={{flex: 1000, flexDirection: "row", marginTop: 10}}>
+                    <SubRaceSelec race={infos.SubRaces[0].Race} id={infos.SubRaces[0].id}/>
+                    <SubRaceSelec race={infos.SubRaces[1].Race} id={infos.SubRaces[1].id}/>
+                    {infos.SubRaces[2] && (<SubRaceSelec race={infos.SubRaces[2].Race} id={infos.SubRaces[2].id}/>)}
+                    {infos.SubRaces[3] && (<SubRaceSelec race={infos.SubRaces[3].Race} id={infos.SubRaces[3].id}/>)}
                 </SafeAreaView>
                 <SubRaceComponnent race={race} id={sub} navigation={navigation}/>
             </ScrollView>

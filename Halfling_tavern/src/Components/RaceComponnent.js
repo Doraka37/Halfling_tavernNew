@@ -2,20 +2,15 @@ import React from 'react';
 import {
     Text,
     View,
-    Dimensions,
-    ScrollView,
-    Image,
-    TouchableOpacity
   } from 'react-native';
-import Half_Elf from './Races/Half_Elf';
+import RaceDisplay from './Races/RaceDisplay';
 import Elf from './Races/Elf';
-
-var Image_array = [require("../../Ressources/Half-Elf.png"), require("../../Ressources/human.jpg"), require("../../Ressources/dwarf.jpg"), require("../../Ressources/gnome.png")]
+import half_elf from "../../Ressources/jsons/half_elf.json"
 
 export function RaceComponnent({id, race, navigation}) {
     switch(id){
         case 0:
-            return <Half_Elf race={race} id={id} navigation={navigation}/>
+            return <RaceDisplay race={race} id={id} navigation={navigation} infos={half_elf}/>
         case 1:
             return <Elf race={race} id={id} navigation={navigation}/>
         default:
@@ -30,6 +25,4 @@ export function RaceComponnent({id, race, navigation}) {
     }
 }
 
-//const mapStateToProps = (state) => state;
-//export default connect(mapStateToProps)(ButtonIcon);
 export default RaceComponnent;

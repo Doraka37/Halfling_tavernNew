@@ -1,0 +1,113 @@
+{
+   "Race": "Elf",
+   "id": -1,
+   "Description": "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it.",
+   "SubRaces": [
+      {
+         "Race": "High-Elf",
+         "Description": "As a high elf, you have a keen mind and a mastery of at least the basics of magic.",
+         "id": 0,
+         "Abilities": [
+            {
+               "title":"Darkvision",
+               "description":"Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Keen Senses",
+               "description":"You have proficiency in the Perception skill.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Fey Ancestry",
+               "description":"You have advantage on saving throws against being charmed, and magic cannot put you to sleep.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Trance",
+               "description":"Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Ability Score Increase",
+               "description":"Your Intelligence score increases by 1.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Elf Weapon Training",
+               "description":"You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Cantrip",
+               "description":"You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Extra Language",
+               "description":"You can speak, read, and write Common, Elvish, and one extra language of your choice.",
+               "choice": 1,
+               "choices": ["Dwarvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc"],
+               "type": "Languages",
+               "level": 1
+            }
+         ]
+      },
+      {
+         "Race": "Eladrin",
+         "Description": "Creatures of magic with strong ties to nature, eladrin live in the twilight realm of the Feywild. Their cities sometimes cross over to the Material Plane, appearing briefly in mountain valleys or deep forest glades before fading back into the Feywild.",
+         "id": 1,
+         "Abilities": [
+            {
+               "title":"Darkvision",
+               "description":"Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You cannot discern color in darkness, only shades of gray.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Keen Senses",
+               "description":"You have proficiency in the Perception skill.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Fey Ancestry",
+               "description":"You have advantage on saving throws against being charmed, and magic cannot put you to sleep.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Trance",
+               "description":"Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Ability Score Increase",
+               "description":"Your Intelligence score increases by 1.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Elf Weapon Training",
+               "description":"You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Fey Step",
+               "description":"You can cast the misty step spell once using this trait. You regain the ability to do so when you finish a short or long rest.",
+               "choice": 0,
+               "level": 1
+            }
+         ]
+      }
+   ]
+ }

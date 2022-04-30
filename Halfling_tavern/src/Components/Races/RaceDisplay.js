@@ -1,26 +1,18 @@
 import React from 'react';
 import {
-    Text,
     View,
     ScrollView,
-    Image,
     FlatList
   } from 'react-native';
 
 import Box from '../BoxComponnent';
 import ChoiceBox from '../ChoiceBoxComponnent';
 import RaceBottom from '../RaceBottom';
-import infos from "../../../Ressources/jsons/half_elf.json"
-import skills from "../../../Ressources/jsons/skillList.json"
 import RaceTop from './RaceTop';
-import ChoiceBoxList from '../ChoiceBoxComponnentList';
 import { choicesToList } from '../../services/utils';
 
-var Image_array = [require("../../../Ressources/Half-Elf.png"), require("../../../Ressources/human.jpg"), require("../../../Ressources/dwarf.jpg"), require("../../../Ressources/gnome.png")]
-
-function Half_Elf({id, race, navigation}) {
-    let list = choicesToList(infos.AbilityScore.choices)
-
+var imageList = [require("../../../Ressources/Half-Elf.png")]
+function RaceDisplay({id, race, navigation, infos}) {
     function renderItem({item}) {
         if (item.choice != 0) {
             return (
@@ -45,8 +37,7 @@ function Half_Elf({id, race, navigation}) {
                     marginBottom: "2%"
                 }}
             >
-                <RaceTop race={race} image={require("../../../Ressources/Half-Elf.png")} description={" Half-elves combine what some say are the best qualities of their elf and human parents."} />
-                <ChoiceBox title={infos.AbilityScore.title} desc={infos.AbilityScore.description} nb={infos.AbilityScore.choice} choices={list} type={infos.AbilityScore.type}/>
+                <RaceTop race={race} image={imageList[infos.id]} description={infos.Description} />
                 <FlatList
                     data={infos.Abilities}
                     renderItem={renderItem}
@@ -58,4 +49,4 @@ function Half_Elf({id, race, navigation}) {
     );
 }
 
-export default Half_Elf;
+export default RaceDisplay;
