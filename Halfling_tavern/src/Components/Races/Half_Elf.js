@@ -11,15 +11,26 @@ import Box from '../BoxComponnent';
 import ChoiceBox from '../ChoiceBoxComponnent';
 import RaceBottom from '../RaceBottom';
 import infos from "../../../Ressources/jsons/half_elf.json"
+import skills from "../../../Ressources/jsons/skillList.json"
 import RaceTop from './RaceTop';
+import ChoiceBoxList from '../ChoiceBoxComponnentList';
+import { choicesToList } from '../../services/utils';
 
 var Image_array = [require("../../../Ressources/Half-Elf.png"), require("../../../Ressources/human.jpg"), require("../../../Ressources/dwarf.jpg"), require("../../../Ressources/gnome.png")]
 
 function Half_Elf({id, race, navigation}) {
+    let list = choicesToList(infos.AbilityScore.choices)
+
     function renderItem({item}) {
-        return (
-            <Box title={item.title} desc={item.description}/>
-        );
+        if (item.choice != 0) {
+            return (
+                <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={choicesToList(item.choices)} />
+            );
+        } else {
+            return (
+                <Box title={item.title} desc={item.description}/>
+            );
+        }           
     }
     
     return (
@@ -30,18 +41,17 @@ function Half_Elf({id, race, navigation}) {
             }}>
             <ScrollView style={{
                     backgroundColor: "#032033",
-                    flex: 80,
+                    flex: 90,
+                    marginBottom: "2%"
                 }}
             >
                 <RaceTop race={race} image={require("../../../Ressources/Half-Elf.png")} description={" Half-elves combine what some say are the best qualities of their elf and human parents."} />
-                <Box title={infos.AbilityScore.title} desc={infos.AbilityScore.description}/>
+                <ChoiceBox title={infos.AbilityScore.title} desc={infos.AbilityScore.description} nb={infos.AbilityScore.choice} choices={list} type={infos.AbilityScore.type}/>
                 <FlatList
                     data={infos.Abilities}
                     renderItem={renderItem}
                     keyExtractor={item => item.title}
                 />
-                <Box title={"Skill Versatility"} desc={"You gain proficiency in two skills of your choice."}/>
-                <ChoiceBox title={"Languages"} desc={"You can speak, read, and write Common, Elvish, and one extra language of your choice."} nb={1} choices={[{label: 'French', value: 'French'}, {label: 'ENglidh', value: 'ENglidh'}]}/>
             </ScrollView>
             <RaceBottom race={race} id={id} navigation={navigation}/>
         </View>

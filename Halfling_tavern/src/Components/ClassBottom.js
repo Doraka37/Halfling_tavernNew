@@ -17,6 +17,7 @@ function ClassBottom({clas, navigation, infos}) {
             backgroundColor: "#330606",
             alignItems: "center", justifyContent: "center",
             width: "100%",
+            marginTop: "2%"
         }}>
             <TouchableOpacity style={{
                     backgroundColor: "#330606",

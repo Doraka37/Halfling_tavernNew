@@ -6,19 +6,41 @@ import {
     FlatList
   } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+import { useDispatch } from 'react-redux'
 
-export function ChoiceBox({title, desc, choices, nb}) {
+export function ChoiceBox({title, desc, choices, nb, type}) {
     const [refresh, setRefresh] = useState(false);
+    const [extend, setExtend] = useState(true);
+    const [cmp, setCmp] = useState(0);
+    const dispatch = useDispatch()
 
     function Check({item}) {
     
         return (
-            <View style={{flexDirection: "row", marginTop: 10, alignItems: "flex-start"}}>
+            <View style={{flexDirection: "row", marginTop: 10, alignItems: "center"}}>
                 <CheckBox
                     value={item.checked}
                     onValueChange={(newValue) => {
-                        setRefresh(!refresh)
+                        if (newValue == false) {
+                            if (type == "Skills")
+                                dispatch(removeSkill(item.label))
+                            if (type == "Languages")
+                                dispatch(removeLanguage(item.label))
+                            setCmp(cmp - 1)
+                        }
+                        if (newValue == true) {
+                            if (cmp >= nb)
+                                return
+                            if (type == "Skills")
+                                dispatch(addSkill(item.label))
+                            if (type == "Languages")
+                                dispatch(addLanguage(item.label))
+                            console.log("hello");
+                            
+                            setCmp(cmp + 1)
+                        }
                         item.checked = newValue
+                        setRefresh(!refresh)
                     }}
                     style={{alignSelf: "flex-start"}}
                     tintColors={{true: "green", false: "orange"}}

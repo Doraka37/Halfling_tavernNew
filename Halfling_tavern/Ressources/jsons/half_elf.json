@@ -11,18 +11,35 @@
          "description":"You have advantage on saving throws against being charmed, and magic cannot put you to sleep.",
          "choice": 0,
          "level": 1
+      },
+      {
+         "title":"Skill Versatility",
+         "description":"You gain proficiency in two skills of your choice.",
+         "choice": 2,
+         "choices": ["Acrobatics (Dex)", "Animal Handling (Wis)", "Arcana (Int)", "Athletics (Str)", "Deception (Cha)", "History (Int)", "Insight (Wis)", "Intimidation (Cha)", "Investigation (Int)", "Medicine (Wis)", "Nature (Int)", "Perception (Wis)", "Performance (Cha)", "Persuasion (Cha)", "Religion (Int)", "Sleight of Hand (Dex)", "Stealth (Dex)", "Survival (Wis)"],
+         "level": 1
+      },
+      {
+         "title":"Languages",
+         "description":"You can speak, read, and write Common, Elvish, and one extra language of your choice.",
+         "choice": 1,
+         "choices": ["Dwarvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc"],
+         "type": "Languages",
+         "level": 1
       }
    ],
      "AbilityScore":{
       "title":"Ability Score Increase",
       "description":"Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.",
-      "choice": 0,
-      "level": 1
+      "choice": 2,
+      "choices": ["Constitution", "Dexterity", "Intelligence", "Strength", "Wisdom"],
+      "level": 1,
+      "type": "AbilityScore"
    },
    "Languages":{
       "title":"Languages",
       "description":"You can speak, read, and write Common, Elvish, and one extra language of your choice.",
-      "choice": 0,
+      "choice": 1,
       "choices": 1,
       "type": "Languages",
       "level": 1
