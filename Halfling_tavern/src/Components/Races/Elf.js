@@ -7,22 +7,22 @@ import {
     TouchableOpacity
   } from 'react-native';
 
-import RaceBottom from '../RaceBottom';
-import Eladrin from './SubRaces/Eladrin';
 import RaceDisplay from './RaceDisplay';
 import infos from "../../../Ressources/jsons/elf.json"
-import half_elf from "../../../Ressources/jsons/half_elf.json"
+import { useDispatch } from 'react-redux'
+import { reset } from '../../../Store/Reducers/baseReducer';
 
 function Elf({id, race, navigation}) {
-
-    const [sub, setSub] = useState(0);
+    const [sub, setSub] = useState(1);
+    const dispatch = useDispatch()
 
     function SubRaceComponnent({id, race, navigation}) {
-        switch(sub){
-            case 0:
-                return <RaceDisplay race={infos.SubRaces[id].Race} id={sub} navigation={navigation} infos={infos.SubRaces[id]}/>
-            case 1:
-                return <RaceDisplay race={infos.SubRaces[id].Race} id={sub} navigation={navigation} infos={infos.SubRaces[id]}/>
+        console.log("id! ", id, " sub: ", sub);
+        switch(id){
+            case infos.SubRaces[0].id:
+                return <RaceDisplay race={infos.SubRaces[0].Race} id={sub} navigation={navigation} infos={infos.SubRaces[0]}/>
+            case infos.SubRaces[1].id:
+                return <RaceDisplay race={infos.SubRaces[1].Race} id={sub} navigation={navigation} infos={infos.SubRaces[1]}/>
             default:
                 return <View style={{
                     backgroundColor: "#330606",
@@ -42,7 +42,10 @@ function Elf({id, race, navigation}) {
               alignItems: 'center', flexDirection: "row" 
             }}>
                 <TouchableOpacity
-                    onPress={() => setSub(id)}
+                    onPress={() => {
+                        dispatch(reset({value: sub, id: sub}))
+                        setSub(id)
+                    }}
                 >
                     <Text style={{fontSize: 40, fontFamily: "dungeon", textAlign: "center", color: "white"}}>
                         {race}

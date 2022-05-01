@@ -28,6 +28,7 @@ const characterSlice = createSlice({
     addLanguage: (state, action) => {
       sizeUp(state, action)
       state.character[action.payload.id].languages = [action.payload.value, ...state.character[action.payload.id].languages]
+      console.log("state.character: ", state.character);
     },
     addLanguages: (state, action) => {
       sizeUp(state, action)
@@ -72,11 +73,12 @@ const characterSlice = createSlice({
       state.character[action.payload.id].savings = action.payload.value.savings
       state.character[action.payload.id].abilities = [action.payload.value.abilities, ...state.character[action.payload.id].abilities]
     },
-    reset: (state) => {
+    reset: (state, action) => {
+      console.log("action: ", action);
       sizeUp(state, action)
-      console.log("RESET FORM: ", state);
-      Object.assign(state, { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0})
-      //state = { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0}
+      console.log("state: ", state);
+      Object.assign(state.character[action.payload.id], { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0})
+      state.character[action.payload.id] = { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0}
     },
   }
 })

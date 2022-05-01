@@ -6,7 +6,7 @@
       {
          "Race": "High-Elf",
          "Description": "As a high elf, you have a keen mind and a mastery of at least the basics of magic.",
-         "id": 0,
+         "id": 1,
          "Abilities": [
             {
                "title":"Darkvision",
@@ -63,7 +63,7 @@
       {
          "Race": "Eladrin",
          "Description": "Creatures of magic with strong ties to nature, eladrin live in the twilight realm of the Feywild. Their cities sometimes cross over to the Material Plane, appearing briefly in mountain valleys or deep forest glades before fading back into the Feywild.",
-         "id": 1,
+         "id": 2,
          "Abilities": [
             {
                "title":"Darkvision",
