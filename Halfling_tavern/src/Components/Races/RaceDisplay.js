@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     View,
     ScrollView,
@@ -12,11 +12,12 @@ import RaceTop from './RaceTop';
 import { choicesToList } from '../../services/utils';
 
 var imageList = [require("../../../Ressources/Half-Elf.png")]
-function RaceDisplay({id, race, navigation, infos}) {
+function RaceDisplay({id, race, navigation, infos, reset, setReset}) {
     function renderItem({item}) {
         if (item.choice != 0) {
+            const list = choicesToList(item.choices)
             return (
-                <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={choicesToList(item.choices)} type={item.type} id={id}/>
+                <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={list} type={item.type} id={id}/>
             );
         } else {
             return (
@@ -24,7 +25,7 @@ function RaceDisplay({id, race, navigation, infos}) {
             );
         }           
     }
-    
+
     return (
         <View style={{
             flex: 100,

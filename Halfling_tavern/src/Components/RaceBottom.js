@@ -1,5 +1,4 @@
 import React from 'react';
-import Store from '../../Store/configureStore';
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
@@ -8,8 +7,6 @@ import {
     TouchableOpacity
   } from 'react-native';
 import { addLanguages, addSpeed } from '../../Store/Reducers/baseReducer';
-
-var Image_array = [require("../../Ressources/Half-Elf.png"), require("../../Ressources/human.jpg"), require("../../Ressources/dwarf.jpg"), require("../../Ressources/gnome.png")]
 
 function RaceBottom({id, race, navigation, infos}) {
     const character = useSelector((state) => state.character)

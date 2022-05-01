@@ -10,7 +10,7 @@ import CheckBox from '@react-native-community/checkbox';
 import { useDispatch } from 'react-redux'
 import { addAbilityScore, removeAbilityScore, addLanguage, removeLanguage, addSkill, removeSkill } from '../../Store/Reducers/baseReducer';
 
-export function ChoiceBox({title, desc, choices, nb, type}) {
+export function ChoiceBox({title, desc, choices, nb, type, id}) {
     const [refresh, setRefresh] = useState(false);
     const [extend, setExtend] = useState(true);
     const [cmp, setCmp] = useState(0);
@@ -25,22 +25,22 @@ export function ChoiceBox({title, desc, choices, nb, type}) {
                     onValueChange={(newValue) => {
                         if (newValue == false) {
                             if (type == "Skills")
-                                dispatch(removeSkill(item.label))
+                                dispatch(removeSkill({value: item.label, id: id}))
                             if (type == "Languages")
-                                dispatch(removeLanguage(item.label))
+                                dispatch(removeLanguage({value: item.label, id: id}))
                             if (type == "AbilityScore")
-                                dispatch(removeAbilityScore(item.label))
+                                dispatch(removeAbilityScore({value: item.label, id: id}))
                             setCmp(cmp - 1)
                         }
                         if (newValue == true) {
                             if (cmp >= nb)
                                 return
                             if (type == "Skills")
-                                dispatch(addSkill(item.label))
+                                dispatch(addSkill({value: item.label, id: id}))
                             if (type == "Languages")
-                                dispatch(addLanguage(item.label))
+                                dispatch(addLanguage({value: item.label, id: id}))
                             if (type == "AbilityScore")
-                                dispatch(addAbilityScore(item.label))
+                                dispatch(addAbilityScore({value: item.label, id: id}))
                             setCmp(cmp + 1)
                         }
                         item.checked = newValue

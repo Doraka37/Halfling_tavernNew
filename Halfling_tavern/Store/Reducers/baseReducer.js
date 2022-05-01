@@ -1,8 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+function sizeUp(state, action) {
+    while (state.character.length < action.payload.id + 1) {
+      state.character.push({ race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0, })
+    }
+}
+
 const characterSlice = createSlice({
   name: 'character',
   initialState: {
+    character: [{
     race: "",
     clas: "",
     skills: [],
@@ -12,53 +19,67 @@ const characterSlice = createSlice({
     languages: [],
     abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0},
     speed: 0,
-
-  },
+  }]},
   reducers: {
     addSkill: (state, action) => {
-      state.skills = [action.payload, ...state.skills]
+      sizeUp(state, action)
+      state.character[action.payload.id].skills = [action.payload.value, ...state.character[action.payload.id].skills]
     },
     addLanguage: (state, action) => {
-      state.languages = [action.payload, ...state.languages]
+      sizeUp(state, action)
+      state.character[action.payload.id].languages = [action.payload.value, ...state.character[action.payload.id].languages]
     },
     addLanguages: (state, action) => {
-      for (let index = 0; index < action.payload.length; index++) {
-        state.languages.push(action.payload[index])
+      sizeUp(state, action)
+      for (let index = 0; index < action.payload.value.length; index++) {
+        state.character[action.payload.id].languages.push(action.payload.value[index])
       }
     },
     addAbilityScore: (state, action) => {
-      state.abilityScore[action.payload] += 1
+      sizeUp(state, action)
+      state.character[action.payload.id].abilityScore[action.payload.value] += 1
     },
     addSpeed: (state, action) => {
-      state.speed = action.payload
+      sizeUp(state, action)
+      state.character[action.payload.id].speed = action.payload.value
     },
     removeSkill: (state, action) => {
-      for (let index = 0; index < state.skills.length; index++) {
-        if (action.payload == state.skills[index]) {
-          state.skills.splice(index, 1)
+      sizeUp(state, action)
+      for (let index = 0; index < state.character[action.payload.id].skills.length; index++) {
+        if (action.payload.value == state.character[action.payload.id].skills[index]) {
+          state.character[action.payload.id].skills.splice(index, 1)
           return
         }
       }
     },
     removeLanguage: (state, action) => {
-      for (let index = 0; index < state.languages.length; index++) {
-        if (action.payload == state.languages[index]) {
-          state.languages.splice(index, 1)
+      sizeUp(state, action)
+      for (let index = 0; index < state.character[action.payload.id].languages.length; index++) {
+        if (action.payload.value == state.character[action.payload.id].languages[index]) {
+          state.character[action.payload.id].languages.splice(index, 1)
           return
         }
       }
     },
     removeAbilityScore: (state, action) => {
-        state.abilityScore[action.payload] -= 1
+      sizeUp(state, action)
+        state.character[action.payload.id].abilityScore[action.payload.value] -= 1
     },
     addClass: (state, action) => {
-      state.clas = action.payload.clas
-      state.proficiencies = action.payload.proficiencies
-      state.savings = action.payload.savings
-      state.abilities = [action.payload.abilities, ...state.abilities]
-    }
+      sizeUp(state, action)
+      state.character[action.payload.id].clas = action.payload.value.clas
+      state.character[action.payload.id].proficiencies = action.payload.value.proficiencies
+      state.character[action.payload.id].savings = action.payload.value.savings
+      state.character[action.payload.id].abilities = [action.payload.value.abilities, ...state.character[action.payload.id].abilities]
+    },
+    reset: (state) => {
+      sizeUp(state, action)
+      console.log("RESET FORM: ", state);
+      Object.assign(state, { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0})
+      //state = { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0}
+    },
   }
 })
   
-  export const {addSkill, removeSkill, addClass, addLanguage, removeLanguage, addAbilityScore, removeAbilityScore, addLanguages, addSpeed } = characterSlice.actions
+  export const {addSkill, removeSkill, addClass, addLanguage, removeLanguage, addAbilityScore, removeAbilityScore, addLanguages, addSpeed, reset } = characterSlice.actions
   export default characterSlice.reducer;

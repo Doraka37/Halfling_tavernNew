@@ -20,9 +20,9 @@ function Elf({id, race, navigation}) {
     function SubRaceComponnent({id, race, navigation}) {
         switch(sub){
             case 0:
-                return <RaceDisplay race={infos.SubRaces[id].Race} id={id} navigation={navigation} infos={infos.SubRaces[id]}/>
+                return <RaceDisplay race={infos.SubRaces[id].Race} id={sub} navigation={navigation} infos={infos.SubRaces[id]}/>
             case 1:
-                return <RaceDisplay race={infos.SubRaces[id].Race} id={id} navigation={navigation} infos={infos.SubRaces[id]}/>
+                return <RaceDisplay race={infos.SubRaces[id].Race} id={sub} navigation={navigation} infos={infos.SubRaces[id]}/>
             default:
                 return <View style={{
                     backgroundColor: "#330606",

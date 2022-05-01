@@ -7,10 +7,10 @@ import RaceDisplay from './Races/RaceDisplay';
 import Elf from './Races/Elf';
 import half_elf from "../../Ressources/jsons/half_elf.json"
 
-export function RaceComponnent({id, race, navigation}) {
+export function RaceComponnent({id, race, navigation, reset, setReset}) {
     switch(id){
         case 0:
-            return <RaceDisplay race={race} id={id} navigation={navigation} infos={half_elf}/>
+            return <RaceDisplay race={race} id={id} navigation={navigation} infos={half_elf} reset={reset} setReset={setReset}/>
         case 1:
             return <Elf race={race} id={id} navigation={navigation}/>
         default:
