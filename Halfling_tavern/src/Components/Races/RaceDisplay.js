@@ -16,7 +16,7 @@ function RaceDisplay({id, race, navigation, infos}) {
     function renderItem({item}) {
         if (item.choice != 0) {
             return (
-                <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={choicesToList(item.choices)} />
+                <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={choicesToList(item.choices)} type={item.type} id={id}/>
             );
         } else {
             return (
@@ -44,7 +44,7 @@ function RaceDisplay({id, race, navigation, infos}) {
                     keyExtractor={item => item.title}
                 />
             </ScrollView>
-            <RaceBottom race={race} id={id} navigation={navigation}/>
+            <RaceBottom race={race} id={id} navigation={navigation} infos={infos}/>
         </View>
     );
 }

@@ -1,15 +1,9 @@
 import React from 'react';
 import {
-    Text,
     View,
-    ScrollView,
-    StyleSheet,
     Dimensions,
-    Image,
-    TouchableOpacity
   } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import Box from '../Components/BoxComponnent';
 import { RaceComponnent } from '../Components/RaceComponnent';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;

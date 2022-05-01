@@ -1,17 +1,19 @@
 import React from 'react';
 import Store from '../../Store/configureStore';
+import { useSelector, useDispatch } from 'react-redux'
 
 import {
     Text,
     View,
     TouchableOpacity
   } from 'react-native';
+import { addLanguages, addSpeed } from '../../Store/Reducers/baseReducer';
 
 var Image_array = [require("../../Ressources/Half-Elf.png"), require("../../Ressources/human.jpg"), require("../../Ressources/dwarf.jpg"), require("../../Ressources/gnome.png")]
 
-function RaceBottom({id, race, navigation}) {
-    const store = Store.getState();
-
+function RaceBottom({id, race, navigation, infos}) {
+    const character = useSelector((state) => state.character)
+    const dispatch = useDispatch()
     return (
         <View style={{
             flex: 0.1,
@@ -24,12 +26,9 @@ function RaceBottom({id, race, navigation}) {
                     width: "80%",
                 }}
                 onPress={() => {
-                    console.log("setting race: ", race)
-                    let action = {
-                        type: 'SET_RACE',
-                        value: race
-                    };
-                    Store.dispatch(action);
+                    console.log("character: ", character);
+                    dispatch(addLanguages(infos.Languages))
+                    dispatch(addSpeed(infos.Speed))
                     navigation.navigate('Class', {
                         race: race,
                 })}
