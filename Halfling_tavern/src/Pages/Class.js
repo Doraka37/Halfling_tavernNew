@@ -2,16 +2,12 @@ import React from 'react';
 import {
     Text,
     View,
-    ScrollView,
-    StyleSheet,
     Dimensions,
-    Image,
-    FlatList,
-    TouchableOpacity
   } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import Box from '../Components/BoxComponnent';
-import Barbarian from '../Components/Classes/Barbarian';
+import ClassDisplay from '../Components/Classes/ClassDisplay';
+import infosBarbarian from "../../Ressources/jsons/barbarian.json"
+import infosWizard from "../../Ressources/jsons/wizard.json"
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
@@ -42,9 +38,9 @@ export function TextComp({title, desc}) {
 function ClassComponnent({clas, race, navigation}) {
     switch(clas){
         case "Barbarian":
-            return <Barbarian race={race} clas={clas} navigation={navigation}/>
+            return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infosBarbarian}/>
         case "Sorcier":
-            return <Barbarian race={race} clas={clas} navigation={navigation}/>
+            return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infosWizard}/>
         default:
             return <View style={{
                 backgroundColor: "#330606",

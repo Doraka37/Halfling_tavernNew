@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import BaseReducer from './Reducers/baseReducer';
+import RaceReducer from './Reducers/baseReducer';
+import CharaReducer from './Reducers/charaReducer';
 
 
 
 
 export const store = configureStore({
   reducer: {
-    character: BaseReducer
+    race: RaceReducer,
+    chara: CharaReducer
   }
 })
 

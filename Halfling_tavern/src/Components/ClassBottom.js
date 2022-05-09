@@ -9,7 +9,7 @@ import {
   import {addClass} from '../../Store/Reducers/baseReducer'
 
 function ClassBottom({clas, navigation, infos}) {
-    const count = useSelector((state) => state.character)
+    const character = useSelector((state) => state.character)
     const dispatch = useDispatch()
     return (
         <View style={{
@@ -24,14 +24,17 @@ function ClassBottom({clas, navigation, infos}) {
                     width: "80%",
                 }}
                 onPress={() => {
-                    console.log("count: ", count);
+                    console.log("character: ", character);
+                    for (let index = 0; index < character.length; index++) {
+                        console.log("character: ", character[index]);
+                    }
                     let proficiencies = infos.stats.Proficiencies
                     let savings = infos.stats.savings
                     let abilities = []
                     for (let index = 0; index < infos.Abilities.length; index++) {
                         abilities.push(infos.Abilities[index].title)
                     }
-                    dispatch(addClass({proficiencies: proficiencies, savings: savings, clas: clas, abilities: abilities}))
+                    //dispatch(addClass({proficiencies: proficiencies, savings: savings, clas: clas, abilities: abilities}))
                 }
             }>
                 <View style={{

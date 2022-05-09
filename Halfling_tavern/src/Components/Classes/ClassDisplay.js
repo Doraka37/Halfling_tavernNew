@@ -9,17 +9,24 @@ import Box from '../BoxComponnent';
 import BoxList from '../BoxComponnentList';
 import ChoiceBoxList from '../ChoiceBoxComponnentList';
 import ClassBottom from '../ClassBottom';
-import infos from "../../../Ressources/jsons/barbarian.json"
 import { choicesToList } from '../../services/utils';
 import ClassTop from './ClassTop';
 
-function Barbarian({clas, race, navigation}) {
+var imageList = [require("../../../Ressources/guerrier.jpg"), require("../../../Ressources/wizard.jpg")]
+function ClassDisplay({clas, race, navigation, infos}) {
     let list = choicesToList(infos.Proficiencies.choices)
 
     function renderItem({item}) {
-        return (
-            <Box title={item.title} desc={item.description}/>
-        );
+        if (item.choice != 0 && item.choices) {
+            const list = choicesToList(item.choices)
+            return (
+                <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={list} type={item.type} id={id} step={"class"}/>
+            );
+        } else {
+            return (
+                <Box title={item.title} desc={item.description}/>
+            );
+        } 
     }
 
     return (
@@ -32,18 +39,18 @@ function Barbarian({clas, race, navigation}) {
                 backgroundColor: "#032033",
                 flex: 80
             }}>
-            <ClassTop race={race} clas={clas} image={require("../../../Ressources/guerrier.jpg")} description={"A fierce warrior of primitive background who can enter a battle rage"} stats={infos.stats} races={infos.races}/>
+            <ClassTop race={race} clas={clas} image={imageList[infos.id]} description={infos.Description} stats={infos.stats} races={infos.races}/>
             <FlatList
                 data={infos.Abilities}
                 renderItem={renderItem}
                 keyExtractor={item => item.title}
             />
             <BoxList title={infos.HitPoints.title} desc={infos.HitPoints.description}/>
-            <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type}/>
+            <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type} step={"class"}/>
             </ScrollView>
             <ClassBottom clas={clas} navigation={navigation} infos={infos}/>
         </View>
     );
 }
 
-export default Barbarian;
+export default ClassDisplay;

@@ -17,7 +17,7 @@ function RaceDisplay({id, race, navigation, infos, reset, setReset}) {
         if (item.choice != 0) {
             const list = choicesToList(item.choices)
             return (
-                <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={list} type={item.type} id={id}/>
+                <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={list} type={item.type} id={id} step={"race"}/>
             );
         } else {
             return (

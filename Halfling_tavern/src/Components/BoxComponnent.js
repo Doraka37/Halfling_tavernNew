@@ -2,13 +2,8 @@ import React, { useState } from 'react';
 import {
     Text,
     View,
-    Dimensions,
     TouchableOpacity
 } from 'react-native';
-
-const SLIDER_WIDTH = Dimensions.get('window').width;
-const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
-const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 3 / 4);
 
 export function Box({title, desc}) {
     const [extend, setExtend] = useState(true);
@@ -42,6 +37,4 @@ export function Box({title, desc}) {
     );
 }
 
-//const mapStateToProps = (state) => state;
-//export default connect(mapStateToProps)(ButtonIcon);
 export default Box;

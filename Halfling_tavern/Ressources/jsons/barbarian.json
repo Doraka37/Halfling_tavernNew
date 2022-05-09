@@ -7,6 +7,8 @@
       "Proficiencies": ["Light armor", "medium armor", "shields", "Simple weapons", "martial weapons"]
     },
     "races": ["Half-Elf"],
+    "id": 0,
+    "Description": "A fierce warrior of primitive background who can enter a battle rage.",
     "Abilities": [
       {
          "title":"rage",

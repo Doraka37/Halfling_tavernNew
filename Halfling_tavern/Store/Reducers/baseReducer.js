@@ -6,7 +6,7 @@ function sizeUp(state, action) {
     }
 }
 
-const characterSlice = createSlice({
+const raceSlice = createSlice({
   name: 'character',
   initialState: {
     character: [{
@@ -83,5 +83,5 @@ const characterSlice = createSlice({
   }
 })
   
-  export const {addSkill, removeSkill, addClass, addLanguage, removeLanguage, addAbilityScore, removeAbilityScore, addLanguages, addSpeed, reset } = characterSlice.actions
-  export default characterSlice.reducer;
+  export const {addSkill, removeSkill, addClass, addLanguage, removeLanguage, addAbilityScore, removeAbilityScore, addLanguages, addSpeed, reset } = raceSlice.actions
+  export default raceSlice.reducer;

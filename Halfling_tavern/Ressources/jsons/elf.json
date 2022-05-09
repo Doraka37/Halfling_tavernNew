@@ -58,7 +58,9 @@
                "type": "Languages",
                "level": 1
             }
-         ]
+         ],
+         "Languages": ["Common", "Elvish"],
+         "Speed": 9
       },
       {
          "Race": "Eladrin",
@@ -115,7 +117,9 @@
                "type": "Languages",
                "level": 1
             }
-         ]
+         ],
+         "Languages": ["Common", "Elvish"],
+         "Speed": 9
       }
    ]
  }

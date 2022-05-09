@@ -1,0 +1,70 @@
+{
+    "stats": {
+      "HitDice": "1d6",
+      "Primary": "Intelligence",
+      "Saves": " Intelligence & Wisdom",
+      "SavesFormatted": ["Intelligence", "Wisdom"],
+      "Proficiencies": ["Daggers", "darts", "slings", "quarterstaffs", "light crossbows"]
+    },
+    "races": ["Half-Elf"],
+    "id": 1,
+    "Description": "A scholarly magic-user capable of manipulating the structures of reality.",
+    "Abilities": [
+      {
+         "title":"Cantrips",
+         "description":"At 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.",
+         "choice": 0,
+         "level": 1
+      },
+      {
+         "title":"Spellbook",
+         "description":"At 1st level, you have a spellbook containing six 1st-level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind.",
+         "choice": 0,
+         "level": 1
+      },
+      {
+         "title":"Arcane Recovery",
+         "description":"You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher. For example, if you’re a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots.",
+         "choice": 0,
+         "level": 1
+      },
+      {
+         "title":"Arcane Tradition",
+         "description":"When you reach 2nd level, you choose an arcane tradition, shaping your practice of magic through one of eight schools: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion, Necromancy, or Transmutation. The School of Evocation is detailed at the end of the class description, and more choices are available in other sources. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level.",
+         "choice": 2,
+         "level": 2
+      },
+      {
+         "title":"Ability Score Improvement",
+         "description":"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.",
+         "choice": 2,
+         "level": 4
+      },
+      {
+         "title":"Spell Mastery",
+         "description":"At 18th level, you have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. If you want to cast either spell at a higher level, you must expend a spell slot as normal. By spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels.",
+         "choice": 3,
+         "level": 18
+      },
+      {
+         "title":"Signature Spells",
+         "description":"When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don’t count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can’t do so again until you finish a short or long rest. If you want to cast either spell at a higher level, you must expend a spell slot as normal.",
+         "choice": 2,
+         "level": 1
+      }
+   ],
+     "Proficiencies":{
+      "title":"Proficiencies",
+      "description":[{"title": "Armor", "desc": "None"}, {"title": "Weapons", "desc": "Daggers, darts, slings, quarterstaffs, light crossbows"}, {"title": "Tools", "desc": "None"}, {"title": "Saving Throws", "desc": "Strength, Constitution"}, {"title": "Skills", "desc": "Choose two from: "}],
+      "choice": 2,
+      "choices": ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"],
+      "type": "Skills",
+      "level": 1
+   },
+   "HitPoints":{
+      "title":"Hit Points",
+      "description":[{"title": "Hit Dice", "desc": "1d6 per wizard level"}, {"title": "Hit Points at 1st Level", "desc": "6 + your Constitution modifier"}, {"title": "Hit Points at Higher Levels", "desc": "1d6 (or 4) + your Constitution modifier per wizard level after 1st"}],
+      "choice": 0,
+      "level": 1
+   }
+ }

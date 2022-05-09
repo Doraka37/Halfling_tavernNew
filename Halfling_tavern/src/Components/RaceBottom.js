@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
@@ -11,6 +11,7 @@ import { addLanguages, addSpeed } from '../../Store/Reducers/baseReducer';
 function RaceBottom({id, race, navigation, infos}) {
     const character = useSelector((state) => state.character)
     const dispatch = useDispatch()
+    const [raceBool, setRaceBool] = useState([])
     return (
         <View style={{
             flex: 0.1,
@@ -24,10 +25,19 @@ function RaceBottom({id, race, navigation, infos}) {
                 }}
                 onPress={() => {
                     console.log("character: ", character);
-                    dispatch(addLanguages(infos.Languages))
-                    dispatch(addSpeed(infos.Speed))
+                    let tmpRace = raceBool
+                    while (tmpRace.length < id + 1) {
+                        tmpRace.push(false)
+                    }
+                    if (raceBool[id] == false) {
+                        tmpRace[id] = true
+                        dispatch(addLanguages({value: infos.Languages, id: id}))
+                        dispatch(addSpeed({value: infos.Speed, id: id}))
+                    }
+                    setRaceBool(tmpRace)
                     navigation.navigate('Class', {
                         race: race,
+                        raceId: id
                 })}
             }>
                 <View style={{
