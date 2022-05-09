@@ -66,6 +66,8 @@
          "Race": "Eladrin",
          "Description": "Creatures of magic with strong ties to nature, eladrin live in the twilight realm of the Feywild. Their cities sometimes cross over to the Material Plane, appearing briefly in mountain valleys or deep forest glades before fading back into the Feywild.",
          "id": 2,
+         "Proficiencies": ["Perception", "Longsword", "shortsword", "shortbow", "longbow"],
+         "AbilityScore": [{"stat": "Intelligence", "bonus": 1}],
          "Abilities": [
             {
                "title":"Darkvision",
@@ -107,14 +109,6 @@
                "title":"Fey Step",
                "description":"You can cast the misty step spell once using this trait. You regain the ability to do so when you finish a short or long rest.",
                "choice": 0,
-               "level": 1
-            },
-            {
-               "title":"FAKE Language",
-               "description":"You can speak, read, and write Common, Elvish, and one extra language of your choice.",
-               "choice": 1,
-               "choices": ["Dwarvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc"],
-               "type": "Languages",
                "level": 1
             }
          ],

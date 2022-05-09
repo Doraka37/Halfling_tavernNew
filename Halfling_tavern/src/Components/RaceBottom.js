@@ -6,7 +6,7 @@ import {
     View,
     TouchableOpacity
   } from 'react-native';
-import { addLanguages, addSpeed } from '../../Store/Reducers/baseReducer';
+import { addLanguages, addSpeed, addProficiencies, addStats } from '../../Store/Reducers/baseReducer';
 
 function RaceBottom({id, race, navigation, infos}) {
     const character = useSelector((state) => state.character)
@@ -33,6 +33,8 @@ function RaceBottom({id, race, navigation, infos}) {
                         tmpRace[id] = true
                         dispatch(addLanguages({value: infos.Languages, id: id}))
                         dispatch(addSpeed({value: infos.Speed, id: id}))
+                        dispatch(addStats({value: infos.AbilityScore, id: id}))
+                        dispatch(addProficiencies({value: infos.Proficiencies, id: id}))
                     }
                     setRaceBool(tmpRace)
                     navigation.navigate('Class', {

@@ -41,7 +41,7 @@ const charaSlice = createSlice({
       sizeUp(state, action)
       state.class[action.payload.id].abilityScore[action.payload.value] += 1
     },
-    classAddSpeed: (state, action) => {
+    classAddProficiencies: (state, action) => {
       sizeUp(state, action)
       state.class[action.payload.id].speed = action.payload.value
     },
@@ -84,5 +84,5 @@ const charaSlice = createSlice({
   }
 })
   
-  export const {classAddSkill, classRemoveSkill, classAddClass, classAddLanguage, classRemoveLanguage, classAddAbilityScore, classRemoveAbilityScore, classAddLanguages, classAddSpeed, reset } = charaSlice.actions
+  export const {classAddSkill, classRemoveSkill, classAddClass, classAddLanguage, classRemoveLanguage, classAddAbilityScore, classRemoveAbilityScore, classAddLanguages, classAddProficiencies, reset } = charaSlice.actions
   export default charaSlice.reducer;
