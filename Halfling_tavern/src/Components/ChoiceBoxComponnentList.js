@@ -10,7 +10,7 @@ import CheckBox from '@react-native-community/checkbox';
 import { useDispatch } from 'react-redux'
 import { classAddAbilityScore, classRemoveAbilityScore, classAddLanguage, classRemoveLanguage, classAddSkill, classRemoveSkill } from '../../Store/Reducers/charaReducer';
 
-export function ChoiceBoxList({title, desc, choices, nb, type}) {
+export function ChoiceBoxList({title, desc, choices, nb, type, id}) {
     const [refresh, setRefresh] = useState(false);
     const [extend, setExtend] = useState(true);
     const [cmp, setCmp] = useState(0);

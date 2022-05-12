@@ -46,7 +46,7 @@ function ClassDisplay({clas, race, navigation, infos}) {
                 keyExtractor={item => item.title}
             />
             <BoxList title={infos.HitPoints.title} desc={infos.HitPoints.description}/>
-            <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type} step={"class"}/>
+            <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type} step={"class"} id={id}/>
             </ScrollView>
             <ClassBottom clas={clas} navigation={navigation} infos={infos}/>
         </View>
