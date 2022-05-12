@@ -6,10 +6,10 @@ import {
     View,
     TouchableOpacity
   } from 'react-native';
-  import {addClass} from '../../Store/Reducers/baseReducer'
+import {addClass} from '../../Store/Reducers/baseReducer'
 
 function ClassBottom({clas, navigation, infos}) {
-    const character = useSelector((state) => state.character)
+    const classe = useSelector((state) => state.chara.class)
     const dispatch = useDispatch()
     return (
         <View style={{
@@ -24,9 +24,9 @@ function ClassBottom({clas, navigation, infos}) {
                     width: "80%",
                 }}
                 onPress={() => {
-                    console.log("character: ", character);
-                    for (let index = 0; index < character.length; index++) {
-                        console.log("character: ", character[index]);
+                    console.log("classe: ", classe);
+                    for (let index = 0; index < classe.length; index++) {
+                        console.log("classe: ", classe[index]);
                     }
                     let proficiencies = infos.stats.Proficiencies
                     let savings = infos.stats.savings

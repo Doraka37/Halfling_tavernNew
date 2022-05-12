@@ -58,6 +58,13 @@ const raceSlice = createSlice({
       }
       console.log("state.character: ", state.character[action.payload.id]);
     },
+    addAbilities: (state, action) => {
+      sizeUp(state, action)
+      for (let index = 0; index < action.payload.value.length; index++) {
+        state.character[action.payload.id].abilities.push(action.payload.value[index])
+      }
+      console.log("state.character: ", state.character[action.payload.id]);
+    },
     removeSkill: (state, action) => {
       sizeUp(state, action)
       for (let index = 0; index < state.character[action.payload.id].skills.length; index++) {
@@ -90,5 +97,5 @@ const raceSlice = createSlice({
   }
 })
   
-  export const {addSkill, removeSkill, addClass, addLanguage, removeLanguage, addAbilityScore, removeAbilityScore, addLanguages, addSpeed, reset, addProficiencies, addStats } = raceSlice.actions
+  export const {addSkill, removeSkill, addClass, addLanguage, removeLanguage, addAbilityScore, removeAbilityScore, addLanguages, addSpeed, reset, addProficiencies, addStats, addAbilities } = raceSlice.actions
   export default raceSlice.reducer;
