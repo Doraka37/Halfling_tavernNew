@@ -13,7 +13,7 @@ import { choicesToList } from '../../services/utils';
 import ClassTop from './ClassTop';
 
 var imageList = [require("../../../Ressources/guerrier.jpg"), require("../../../Ressources/wizard.jpg")]
-function ClassDisplay({clas, race, navigation, infos}) {
+function ClassDisplay({clas, race, navigation, infos, id}) {
     let list = choicesToList(infos.Proficiencies.choices)
 
     function renderItem({item}) {
@@ -48,7 +48,7 @@ function ClassDisplay({clas, race, navigation, infos}) {
             <BoxList title={infos.HitPoints.title} desc={infos.HitPoints.description}/>
             <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type} step={"class"} id={id}/>
             </ScrollView>
-            <ClassBottom clas={clas} navigation={navigation} infos={infos}/>
+            <ClassBottom clas={clas} navigation={navigation} infos={infos} id={infos.id}/>
         </View>
     );
 }

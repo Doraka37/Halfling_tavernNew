@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 
 import {
@@ -6,11 +6,12 @@ import {
     View,
     TouchableOpacity
   } from 'react-native';
-import {addClass} from '../../Store/Reducers/baseReducer'
+import { classAddAbilities, classAddProficiencies } from '../../Store/Reducers/charaReducer';
 
-function ClassBottom({clas, navigation, infos}) {
+function ClassBottom({id, clas, navigation, infos}) {
     const classe = useSelector((state) => state.chara.class)
     const dispatch = useDispatch()
+    const [classBool, setClassBool] = useState([])
     return (
         <View style={{
             flex: 0.1,
@@ -24,16 +25,22 @@ function ClassBottom({clas, navigation, infos}) {
                     width: "80%",
                 }}
                 onPress={() => {
-                    console.log("classe: ", classe);
-                    for (let index = 0; index < classe.length; index++) {
-                        console.log("classe: ", classe[index]);
+                    console.log("character: ", classe);
+                    let tmpClass = classBool
+                    while (tmpClass.length < id + 1) {
+                        tmpClass.push(false)
                     }
-                    let proficiencies = infos.stats.Proficiencies
-                    let savings = infos.stats.savings
-                    let abilities = []
-                    for (let index = 0; index < infos.Abilities.length; index++) {
-                        abilities.push(infos.Abilities[index].title)
+                    if (classBool[id] == false) {
+                        tmpClass[id] = true
+                        dispatch(classAddProficiencies({value: infos.stats.Proficiencies, id: id}))
+                        let abilities = []
+                        for (let index = 0; index < infos.Abilities.length; index++) {
+                            if (infos.Abilities[index].level == 1)
+                                abilities.push(infos.Abilities[index])
+                        }
+                        dispatch(classAddAbilities({value: abilities, id: id}))
                     }
+                    setClassBool(tmpClass)
                     //dispatch(addClass({proficiencies: proficiencies, savings: savings, clas: clas, abilities: abilities}))
                 }
             }>
