@@ -14,10 +14,10 @@ function RaceBottom({id, race, navigation, infos}) {
     const [raceBool, setRaceBool] = useState([])
     return (
         <View style={{
-            flex: 0.1,
             backgroundColor: "#330606",
             alignItems: "center", justifyContent: "center",
-            width: "100%",
+            width: 400,
+            height: 80
         }}>
             <TouchableOpacity style={{
                     backgroundColor: "#330606",
@@ -53,7 +53,7 @@ function RaceBottom({id, race, navigation, infos}) {
                     width: "100%",
                 }}>
                     <Text style={{fontSize: 60, fontFamily: "dungeon", marginTop: -10, textAlign: "center", color: "white"}}>
-                        Choisir cette race
+                        Pick this race
                     </Text>
                 </View>
             </TouchableOpacity>

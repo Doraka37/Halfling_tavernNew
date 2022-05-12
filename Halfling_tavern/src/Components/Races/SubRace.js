@@ -12,7 +12,7 @@ import infos from "../../../Ressources/jsons/elf.json"
 import { useDispatch } from 'react-redux'
 import { reset } from '../../../Store/Reducers/baseReducer';
 
-function Elf({id, race, navigation}) {
+function SubRace({id, race, navigation}) {
     const [sub, setSub] = useState(1);
     const dispatch = useDispatch()
 
@@ -60,10 +60,12 @@ function Elf({id, race, navigation}) {
             flex: 100,
             backgroundColor: "#032033",
             alignItems: "center", justifyContent: "center",
+            width: "100%"
             }}>
             <ScrollView style={{
                 backgroundColor: "#032033",
                 flex: 80,
+                width: "100%"
                 }}
                 nestedScrollEnabled={true}
                 contentContainerStyle={{alignItems: "center", justifyContent: "center",}}>
@@ -93,4 +95,4 @@ function Elf({id, race, navigation}) {
     );
 }
 
-export default Elf;
+export default SubRace;

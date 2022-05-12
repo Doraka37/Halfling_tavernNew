@@ -4,7 +4,7 @@ import {
     View,
   } from 'react-native';
 import RaceDisplay from './Races/RaceDisplay';
-import Elf from './Races/Elf';
+import SubRace from './Races/SubRace';
 import half_elf from "../../Ressources/jsons/half_elf.json"
 
 export function RaceComponnent({id, race, navigation, reset, setReset}) {
@@ -12,7 +12,7 @@ export function RaceComponnent({id, race, navigation, reset, setReset}) {
         case 0:
             return <RaceDisplay race={race} id={id} navigation={navigation} infos={half_elf} reset={reset} setReset={setReset}/>
         case 1:
-            return <Elf race={race} id={id} navigation={navigation}/>
+            return <SubRace race={race} id={id} navigation={navigation}/>
         default:
             return <View style={{
                 backgroundColor: "#330606",

@@ -14,11 +14,11 @@ function ClassBottom({id, clas, navigation, infos}) {
     const [classBool, setClassBool] = useState([])
     return (
         <View style={{
-            flex: 0.1,
             backgroundColor: "#330606",
             alignItems: "center", justifyContent: "center",
             width: "100%",
-            marginTop: "2%"
+            marginTop: "2%",
+            height: 80
         }}>
             <TouchableOpacity style={{
                     backgroundColor: "#330606",
@@ -49,7 +49,7 @@ function ClassBottom({id, clas, navigation, infos}) {
                     width: "100%",
                 }}>
                     <Text style={{fontSize: 55, fontFamily: "dungeon", marginTop: -10, textAlign: "center", color: "white"}}>
-                        Choisir cette classe
+                        Pick this class
                     </Text>
                 </View>
             </TouchableOpacity>
