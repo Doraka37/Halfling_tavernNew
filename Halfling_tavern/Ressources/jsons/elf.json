@@ -7,6 +7,8 @@
          "Race": "High-Elf",
          "Description": "As a high elf, you have a keen mind and a mastery of at least the basics of magic.",
          "id": 1,
+         "Proficiencies": ["Perception", "Longsword", "shortsword", "shortbow", "longbow"],
+         "AbilityScore": [{"stat": "Intelligence", "bonus": 1}],
          "Abilities": [
             {
                "title":"Darkvision",

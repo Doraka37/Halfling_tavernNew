@@ -14,8 +14,6 @@ const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 3 / 4);
 import list from "../../Ressources/class_array.json"
 
-var array = [{id: 0, clas: "Guerrier"}, {id: 1, clas: "Sorcier"}, {id: 2, clas: "Barde"}, {id: 3, clas: "Rodeur"}]
-
 export function TextComp({title, desc}) {
     return (
         <View style={{
@@ -35,12 +33,12 @@ export function TextComp({title, desc}) {
     );
 }
 
-function ClassComponnent({clas, race, navigation}) {
+function ClassComponnent({clas, race, navigation, raceId}) {
     switch(clas){
         case "Barbarian":
-            return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infosBarbarian}/>
+            return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infosBarbarian} id={0}/>
         case "Sorcier":
-            return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infosWizard}/>
+            return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infosWizard} id={1}/>
         default:
             return <View style={{
                 backgroundColor: "#330606",
@@ -63,12 +61,12 @@ export function Class(props) {
     }}>
         <Carousel
             style={{flex: 100}}
-            data={list[0]}
+            data={list[raceId]}
             keyExtractor={(item) => item.id}
             sliderWidth={SLIDER_WIDTH}
             itemWidth={ITEM_WIDTH}
             renderItem={({ item }) => (
-                <ClassComponnent clas={item} race={race} navigation={props.navigation}/>
+                <ClassComponnent clas={item} race={race} navigation={props.navigation} raceId={raceId}/>
             )}
         />
       </View>

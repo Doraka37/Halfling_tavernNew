@@ -22,6 +22,7 @@ const charaSlice = createSlice({
   }]},
   reducers: {
     classAddSkill: (state, action) => {
+      console.log(action.payload);
       sizeUp(state, action)
       state.class[action.payload.id].skills = [action.payload.value, ...state.class[action.payload.id].skills]
       console.log("class: ", state.class[action.payload.id]);
