@@ -19,7 +19,9 @@ const charaSlice = createSlice({
     languages: [],
     abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0},
     speed: 0,
-  }]},
+  }],
+  raceId: 0
+},
   reducers: {
     classAddSkill: (state, action) => {
       console.log(action.payload);
@@ -91,8 +93,11 @@ const charaSlice = createSlice({
       Object.assign(state.class[action.payload.id], { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0})
       state.class[action.payload.id] = { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0}
     },
+    setRaceId: (state, action) => {
+      state.raceId = action.payload
+    }
   }
 })
   
-  export const {classAddSkill, classRemoveSkill, classAddClass, classAddLanguage, classRemoveLanguage, classAddAbilityScore, classRemoveAbilityScore, classAddLanguages, classAddProficiencies, reset, classAddAbilities } = charaSlice.actions
+  export const {classAddSkill, classRemoveSkill, classAddClass, classAddLanguage, classRemoveLanguage, classAddAbilityScore, classRemoveAbilityScore, classAddLanguages, classAddProficiencies, reset, classAddAbilities, setRaceId } = charaSlice.actions
   export default charaSlice.reducer;

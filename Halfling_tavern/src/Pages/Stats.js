@@ -57,11 +57,25 @@ function pointBuy(array) {
 
 export function Stats(props) {
     const [sub, setSub] = useState(0);
-    const classe = useSelector((state) => state.chara.class)
-    const race = useSelector((state) => state.race.character)
+    const raceId = useSelector((state) => state.chara.raceId)
+    var classId = props.route.params.classId;
+    const race = useSelector((state) => state.race.character[raceId])
+    const classe = useSelector((state) => state.chara.class[classId])
 
     console.log("classe: ", classe);
     console.log("race: ", race);
+
+    let BonusStats = [0, 0, 0, 0, 0, 0]
+
+    BonusStats[0] = classe.abilityScore.Strength + race.abilityScore.Strength
+    BonusStats[1] = classe.abilityScore.Dexterity + race.abilityScore.Dexterity
+    BonusStats[2] = classe.abilityScore.Constitution + race.abilityScore.Constitution
+    BonusStats[3] = classe.abilityScore.Intelligence + race.abilityScore.Intelligence
+    BonusStats[4] = classe.abilityScore.Wisdom + race.abilityScore.Wisdom
+    BonusStats[5] = classe.abilityScore.Charisma + race.abilityScore.Charisma
+
+    console.log("BonusStats: ", BonusStats);
+    
     function totalStats(number) {
         let tot = 0
         for (let index = 0; index < number.length; index++) {
@@ -121,8 +135,8 @@ export function Stats(props) {
                     </Text>
                 </View>
                 <View>
-                    <Text style={{fontSize: 40, fontFamily: "dungeon", textAlign: "center", color: "white", marginTop: "20%", marginLeft: "5%"}}>
-                        + 0 = 
+                    <Text style={{fontSize: 50, fontFamily: "dungeon", textAlign: "center", color: "white", marginTop: "8%", marginLeft: "5%"}}>
+                        +   {BonusStats[id]}   =   {(Number(BonusStats[id]) + Number(number[id]))}
                     </Text>
                 </View>
             </View>

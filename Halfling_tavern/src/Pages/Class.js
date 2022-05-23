@@ -13,6 +13,8 @@ const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 3 / 4);
 import list from "../../Ressources/class_array.json"
+import { useDispatch } from 'react-redux'
+import { setRaceId } from '../../Store/Reducers/charaReducer';
 
 export function TextComp({title, desc}) {
     return (
@@ -54,7 +56,9 @@ function ClassComponnent({clas, race, navigation, raceId}) {
 export function Class(props) {
     var race = props.route.params.race;
     var raceId = props.route.params.raceId;
+    const dispatch = useDispatch()
 
+    dispatch(setRaceId(raceId))
     return (
       <View style={{
         flex: 100
