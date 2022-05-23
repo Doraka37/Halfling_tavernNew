@@ -41,7 +41,7 @@ function ClassBottom({id, clas, navigation, infos}) {
                         dispatch(classAddAbilities({value: abilities, id: id}))
                     }
                     setClassBool(tmpClass)
-                    //dispatch(addClass({proficiencies: proficiencies, savings: savings, clas: clas, abilities: abilities}))
+                    navigation.navigate('Stats')
                 }
             }>
                 <View style={{

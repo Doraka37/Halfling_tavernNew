@@ -5,8 +5,6 @@ import {
   } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import { RaceComponnent } from '../Components/RaceComponnent';
-import { useSelector, useDispatch } from 'react-redux'
-import { reset } from '../../Store/Reducers/baseReducer';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
@@ -14,7 +12,6 @@ const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 var array = [{id: 0, race: "Half-Elf"}, {id: 1, race: "Elf"}, {id: 2, race: "Dwarf"}, {id: 3, race: "Gnome"}]
 
 export function Race(props) {
-    const dispatch = useDispatch()
     const [resete, setReset] = useState(false);
 
     return (

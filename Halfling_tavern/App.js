@@ -14,7 +14,8 @@
  import Race from './src/Pages/Race';
  import Home from './src/Pages/Home';
  import Class from './src/Pages/Class';
- 
+ import Stats from './src/Pages/Stats';
+
  const Stack = createNativeStackNavigator();
  
  const App: () => Node = () => {
@@ -40,6 +41,11 @@
              name="Class"
              component={Class}
              options={{ title: 'Class' }}
+           />
+           <Stack.Screen
+             name="Stats"
+             component={Stats}
+             options={{ title: 'Stats' }}
            />
          </Stack.Navigator>
        </NavigationContainer>

@@ -46,7 +46,8 @@ function RaceBottom({id, race, navigation, infos}) {
                     navigation.navigate('Class', {
                         race: race,
                         raceId: id
-                })}
+                    })
+                }
             }>
                 <View style={{
                     backgroundColor: "#330606",

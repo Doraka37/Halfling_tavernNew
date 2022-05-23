@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import SheetResume from '../Components/SheetResume';
-import { SquircleView } from 'react-native-figma-squircle'
 
 export function Home(props) {
     return (
