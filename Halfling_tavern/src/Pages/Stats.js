@@ -5,9 +5,11 @@ import {
     Text,
     SafeAreaView,
     TextInput,
-    StyleSheet
-  } from 'react-native';
-  import { useSelector, useDispatch } from 'react-redux'
+    StyleSheet,
+    Button
+} from 'react-native';
+import { useSelector, useDispatch } from 'react-redux'
+import ModalDropdown from 'react-native-modal-dropdown';
 
 function roll() {
     let array = []
@@ -110,7 +112,7 @@ export function Stats(props) {
     function NumberField({setNumber, setRemaining, text, number, id}) {
         return (
             <View style={{flexDirection: "row"}}>
-                <View style={styles.input}>
+                <View style={styles.inputBuy}>
                     <TextInput
                         onChangeText={newText => {
                             let tmpNumber = [...number]
@@ -143,12 +145,109 @@ export function Stats(props) {
           );
     }
 
+    function NumberDropDown({setNumber, setRefresh, text, number, id, array, setArray, refresh}) {
+        return (
+            <View style={{flexDirection: "row"}}>
+                <View style={styles.input}>
+                    <ModalDropdown
+                        style={{backgroundColor: "white", textAlign: "center"}}
+                        textStyle={{textAlign: "center", fontSize: 40, fontFamily: "dungeon"}}
+                        dropdownStyle={{width: "40%"}}
+                        options={array}
+                        defaultValue={"---"}
+                        onSelect={(index, value) => {
+                            let tmpArray = array
+                            if (number[id] !== "---") {
+                                tmpArray.push(number[id])
+                            }
+                            let tmpNumber = number
+                            tmpNumber[id] = value
+                            setNumber(tmpNumber)
+                            if (value != "---")
+                                tmpArray.splice(index, 1)
+                            setArray(tmpArray)
+                            setRefresh(!refresh)
+                        }}
+                    />
+                    <Text style={{fontSize: 40, fontFamily: "dungeon", textAlign: "center", color: "white"}}>
+                        {text}
+                    </Text>
+                </View>
+                <View>
+                    <Text style={{fontSize: 50, fontFamily: "dungeon", textAlign: "center", color: "white", marginTop: "8%", marginLeft: "5%"}}>
+                        +   {BonusStats[id]}   =   {(Number(BonusStats[id]) + Number(number[id]))}
+                    </Text>
+                </View>
+            </View>
+          );
+    }
+
+    function rollStat(id, rolled, setRolled, setNumber, number) {
+        let tmpRoll = rolled
+        tmpRoll[id] = true
+        setRolled(tmpRoll)
+        let nbr = 0
+        for (let j = 0; j < 4; j+= 1) {
+            nbr += Math.floor(Math.random() * 6) + 1
+        }
+        let tmpNumber = number
+        tmpNumber[id] = nbr.toString()
+        setNumber(tmpNumber)
+    }
+
+    function NumberManual({setNumber, setRolled, rolled, text, number, id, setRefresh, refresh}) {
+        return (
+            <View style={{marginTop: 20, flexDirection: "row"}}>
+                <View  style={styles.inputBuy}>
+                    <TextInput
+                        onChangeText={newText => {
+                            let tmpNumber = [...number]
+                            tmpNumber[id] = newText
+                            setNumber(tmpNumber)
+                        }}
+                        onSubmitEditing={(event) => {
+                            let tmpNumber = [...number]
+                            if (Number(tmpNumber[id]) > 18)
+                                tmpNumber[id] = "18"
+                            if (Number(tmpNumber[id]) < 3)
+                                tmpNumber[id] = "3"
+                            setNumber(tmpNumber)
+                        }}
+                        value={number[id]}
+                        keyboardType="numeric"
+                    />
+                    <View style={{ flexDirection: "row"}}>
+                        <Text style={{fontSize: 40, fontFamily: "dungeon", textAlign: "center", color: "white"}}>
+                            {text}
+                        </Text>
+                        <View style={{marginLeft: 20, height: 40, marginTop: 5}} >
+                        <Button
+                            disabled={rolled[id]}
+                            onPress={() => {
+                                rollStat(id, rolled, setRolled, setNumber, number)
+                                setRefresh(!refresh)
+                            }}
+                            title="Roll"
+                            color="#841584"
+                            accessibilityLabel="Learn more about this purple button"
+                        />
+                        </View>
+                     </View>
+                </View>
+                <View>
+                    <Text style={{fontSize: 50, fontFamily: "dungeon", textAlign: "center", color: "white", marginTop: "8%", marginLeft: "5%"}}>
+                        +   {BonusStats[id]}   =   {(Number(BonusStats[id]) + Number(number[id]))}
+                    </Text>
+                </View>
+            </View>
+          );
+    }
+
     
 
     function PointBuy({text, id}) {
         const [number, setNumber] = useState(["8", "8", "8", "8", "8", "8"]);
         const [remaining, setRemaining] = useState(27);
-        console.log("hello");
         
         return (
             <View style={{
@@ -171,14 +270,55 @@ export function Stats(props) {
           );
     }
 
+    function StandardArray({text, id}) {
+        const [number, setNumber] = useState(["---", "---", "---", "---", "---", "---"]);
+        const [refresh, setRefresh] = useState(false);
+        const [array, setArray] = useState(["---", "15", "14", "13", "12", "10", "8", "---"]);
+
+        return (
+            <View style={{
+                flex: 100,
+                backgroundColor: "#032033",
+            }}>
+                <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Strength"} number={number} id={0} array={array} setArray={setArray}/>
+                <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Dexterity"} number={number} id={1} array={array} setArray={setArray}/>
+                <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Constitution"} number={number} id={2} array={array} setArray={setArray}/>
+                <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Intelligence"} number={number} id={3} array={array} setArray={setArray}/>
+                <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Wisdom"} number={number} id={4} array={array} setArray={setArray}/>
+                <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Charisma"} number={number} id={5} array={array} setArray={setArray}/>
+            </View>
+          );
+    }
+
+    function ManualRolled({text, id}) {
+        const [number, setNumber] = useState(["8", "8", "8", "8", "8", "8"]);
+        const [rolled, setRolled] = useState([false, false, false, false, false, false]);
+        const [refresh, setRefresh] = useState(false);
+
+        return (
+            <View style={{
+                flex: 100,
+                backgroundColor: "#032033",
+                marginTop: -30
+            }}>
+                <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Strength"} number={number} rolled={rolled} setRolled={setRolled} id={0}/>
+                <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Dexterity"} number={number} rolled={rolled} setRolled={setRolled} id={1}/>
+                <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Constitution"} number={number} rolled={rolled} setRolled={setRolled} id={2}/>
+                <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Intelligence"} number={number} rolled={rolled} setRolled={setRolled} id={3}/>
+                <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Wisdom"} number={number} rolled={rolled} setRolled={setRolled} id={4}/>
+                <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Charisma"} number={number} rolled={rolled} setRolled={setRolled} id={5}/>
+            </View>
+          );
+    }
+
     function SubStatsComponnent({id}) {
         switch(id){
             case 0:
                 return <PointBuy />
             case 1:
-                return <PointBuy />
+                return <StandardArray />
             case 2:
-                return <PointBuy />
+                return <ManualRolled/>
         }
     }
 
@@ -202,10 +342,17 @@ export function Stats(props) {
       height: 40,
       width: "35%",
       marginLeft: "5%",
-      backgroundColor: "white",
       marginTop: "5%",
       marginBottom: "10%"
     },
+    inputBuy: {
+        height: 40,
+        backgroundColor: "white",
+        width: "35%",
+        marginLeft: "5%",
+        marginTop: "5%",
+        marginBottom: "10%"
+      },
   });
 
 export default Stats;
