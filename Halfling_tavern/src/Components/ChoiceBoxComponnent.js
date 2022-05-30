@@ -69,7 +69,7 @@ export function ChoiceBox({title, desc, choices, nb, type, id, step}) {
 
     function Check({item}) {
         return (
-            <View style={{flexDirection: "row", marginTop: 10, alignItems: "center"}}>
+            <View style={{flexDirection: "row", marginTop: "3%", alignItems: "center"}}>
                 <CheckBox
                     value={item.checked}
                     onValueChange={(newValue) => {

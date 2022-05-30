@@ -1,8 +1,10 @@
 {
+   "Name": " Criminal / Spy",
+   "Description": "You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You’re far closer than most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules and regulations of society.",
     "Abilities": [
       {
-         "title":"Criminal Specialty",
-         "description":"There are many kinds of criminals, and within a thieves’ guild or similar criminal organization, individual members have particular specialties. Even criminals who operate outside of such organizations have strong preferences for certain kinds of crimes over others. Choose the role you played in your criminal life, or roll on the table below.",
+         "title":" Criminal Contact",
+         "description":"You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you.",
          "choice": 0,
          "level": 0
       },
@@ -12,10 +14,15 @@
          "choice": 1,
          "choices": ["Dice", "Dragonchess", "Playing cards", "Three-Dragon Ante"],
          "type": "Proficiencie",
-         "level": 1
+         "level": 0
       }
    ],
    "Proficiencies": ["Deception", "Stealth", "Thieves'tools"],
    "Equipments": ["Crowbar", "Dark clothes", "Hood"],
-   "Money": [0, 0, 0, 15, 0]
+   "Money": [0, 0, 0, 15, 0],
+   "Display":{
+      "title":"Proficiencies and Equipments",
+      "description":[{"title": "Skill Proficiencies", "desc": "Deception, Stealth"}, {"title": "Tool Proficiencie", "desc": "Thieves'tools, One type of Gaming Set"}, {"title": "Equipment", "desc": "Crowbar, Dark clothes, Hood, 15Gp"}],
+      "level": 0
+   }
  }

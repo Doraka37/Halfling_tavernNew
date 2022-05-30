@@ -8,6 +8,7 @@ import {
 import Box from '../BoxComponnent';
 import BoxList from '../BoxComponnentList';
 import ChoiceBoxList from '../ChoiceBoxComponnentList';
+import ChoiceBox from '../ChoiceBoxComponnent';
 import ClassBottom from '../ClassBottom';
 import { choicesToList } from '../../services/utils';
 import ClassTop from './ClassTop';
@@ -39,14 +40,14 @@ function ClassDisplay({clas, race, navigation, infos, id}) {
                 backgroundColor: "#032033",
                 flex: 80
             }}>
-            <ClassTop race={race} clas={clas} image={imageList[infos.id]} description={infos.Description} stats={infos.stats} races={infos.races}/>
-            <FlatList
-                data={infos.Abilities}
-                renderItem={renderItem}
-                keyExtractor={item => item.title}
-            />
-            <BoxList title={infos.HitPoints.title} desc={infos.HitPoints.description}/>
-            <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type} step={"class"} id={id}/>
+                <ClassTop race={race} clas={clas} image={imageList[infos.id]} description={infos.Description} stats={infos.stats} races={infos.races}/>
+                <FlatList
+                    data={infos.Abilities}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.title}
+                />
+                <BoxList title={infos.HitPoints.title} desc={infos.HitPoints.description}/>
+                <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type} step={"class"} id={id}/>
             </ScrollView>
             <ClassBottom clas={clas} navigation={navigation} infos={infos} id={infos.id}/>
         </View>
