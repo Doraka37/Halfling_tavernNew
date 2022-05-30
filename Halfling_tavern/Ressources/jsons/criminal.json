@@ -1,0 +1,21 @@
+{
+    "Abilities": [
+      {
+         "title":"Criminal Specialty",
+         "description":"There are many kinds of criminals, and within a thieves’ guild or similar criminal organization, individual members have particular specialties. Even criminals who operate outside of such organizations have strong preferences for certain kinds of crimes over others. Choose the role you played in your criminal life, or roll on the table below.",
+         "choice": 0,
+         "level": 0
+      },
+      {
+         "title":"Gaming Set Proficiencie",
+         "description":"You gain proficiencie in one gaming set of your choice",
+         "choice": 1,
+         "choices": ["Dice", "Dragonchess", "Playing cards", "Three-Dragon Ante"],
+         "type": "Proficiencie",
+         "level": 1
+      }
+   ],
+   "Proficiencies": ["Deception", "Stealth", "Thieves'tools"],
+   "Equipments": ["Crowbar", "Dark clothes", "Hood"],
+   "Money": [0, 0, 0, 15, 0]
+ }

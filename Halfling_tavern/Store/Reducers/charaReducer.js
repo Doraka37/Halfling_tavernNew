@@ -20,19 +20,17 @@ const charaSlice = createSlice({
     abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0},
     speed: 0,
   }],
-  raceId: 0
+  raceId: 0,
+  abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}
 },
   reducers: {
     classAddSkill: (state, action) => {
-      console.log(action.payload);
       sizeUp(state, action)
       state.class[action.payload.id].skills = [action.payload.value, ...state.class[action.payload.id].skills]
-      console.log("class: ", state.class[action.payload.id]);
     },
     classAddLanguage: (state, action) => {
       sizeUp(state, action)
       state.class[action.payload.id].languages = [action.payload.value, ...state.class[action.payload.id].languages]
-      console.log("state.class: ", state.class);
     },
     classAddLanguages: (state, action) => {
       sizeUp(state, action)
@@ -55,7 +53,6 @@ const charaSlice = createSlice({
       for (let index = 0; index < action.payload.value.length; index++) {
         state.class[action.payload.id].abilities.push(action.payload.value[index])
       }
-      console.log("state.class: ", state.class[action.payload.id]);
     },
     classRemoveSkill: (state, action) => {
       sizeUp(state, action)
@@ -87,17 +84,23 @@ const charaSlice = createSlice({
       state.class[action.payload.id].abilities = [action.payload.value.abilities, ...state.class[action.payload.id].abilities]
     },
     classReset: (state, action) => {
-      console.log("action: ", action);
       sizeUp(state, action)
-      console.log("state: ", state);
       Object.assign(state.class[action.payload.id], { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0})
       state.class[action.payload.id] = { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0}
     },
     setRaceId: (state, action) => {
       state.raceId = action.payload
+    },
+    classSetStats: (state, action) => {
+      state.abilityScore.Strength = action.payload.Strength
+      state.abilityScore.Dexterity = action.payload.Dexterity
+      state.abilityScore.Constitution = action.payload.Constitution
+      state.abilityScore.Wisdom = action.payload.Wisdom
+      state.abilityScore.Intelligence = action.payload.Intelligence
+      state.abilityScore.Charisma = action.payload.Charisma
     }
   }
 })
   
-  export const {classAddSkill, classRemoveSkill, classAddClass, classAddLanguage, classRemoveLanguage, classAddAbilityScore, classRemoveAbilityScore, classAddLanguages, classAddProficiencies, reset, classAddAbilities, setRaceId } = charaSlice.actions
+  export const {classAddSkill, classRemoveSkill, classAddClass, classAddLanguage, classRemoveLanguage, classAddAbilityScore, classRemoveAbilityScore, classAddLanguages, classAddProficiencies, reset, classAddAbilities, setRaceId, classSetStats } = charaSlice.actions
   export default charaSlice.reducer;

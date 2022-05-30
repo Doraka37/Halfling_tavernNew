@@ -15,6 +15,7 @@
  import Home from './src/Pages/Home';
  import Class from './src/Pages/Class';
  import Stats from './src/Pages/Stats';
+ import Background from './src/Pages/Background';
 
  const Stack = createNativeStackNavigator();
  
@@ -46,6 +47,11 @@
              name="Stats"
              component={Stats}
              options={{ title: 'Stats' }}
+           />
+           <Stack.Screen
+             name="Background"
+             component={Background}
+             options={{ title: 'Background' }}
            />
          </Stack.Navigator>
        </NavigationContainer>

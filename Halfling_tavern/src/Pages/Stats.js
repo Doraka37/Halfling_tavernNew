@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux'
 import ModalDropdown from 'react-native-modal-dropdown';
+import { classSetStats } from '../../Store/Reducers/charaReducer';
 
 function roll() {
     let array = []
@@ -63,7 +64,8 @@ export function Stats(props) {
     var classId = props.route.params.classId;
     const race = useSelector((state) => state.race.character[raceId])
     const classe = useSelector((state) => state.chara.class[classId])
-
+    const dispatch = useDispatch()
+    
     console.log("classe: ", classe);
     console.log("race: ", race);
 
@@ -190,14 +192,30 @@ export function Stats(props) {
         for (let j = 0; j < 4; j+= 1) {
             nbr += Math.floor(Math.random() * 6) + 1
         }
-        let tmpNumber = number
+        let tmpNumber = [...number]
         tmpNumber[id] = nbr.toString()
         setNumber(tmpNumber)
     }
 
+    function validate(number, navigation) {
+        let nbr = 0
+        let tmpNumber = [...number]
+        for (let index = 0; index < number.length; index++) {
+            if (number[index] === "---") {
+                console.log("wrong");
+                return
+            }
+            nbr = Number(number[index]) + Number(BonusStats[index])
+            tmpNumber[index] = nbr.toString()
+        }
+        console.log("tmpNumber: ", tmpNumber);
+        dispatch(classSetStats({Strength: tmpNumber[0], Dexterity: tmpNumber[1], Constitution: tmpNumber[2], Intelligence: tmpNumber[3], Wisdom: tmpNumber[4], Charisma: tmpNumber[5]}))
+        navigation.navigate('Background')
+    }
+
     function NumberManual({setNumber, setRolled, rolled, text, number, id, setRefresh, refresh}) {
         return (
-            <View style={{marginTop: 20, flexDirection: "row"}}>
+            <View style={{marginTop: 10, flexDirection: "row"}}>
                 <View  style={styles.inputBuy}>
                     <TextInput
                         onChangeText={newText => {
@@ -229,7 +247,6 @@ export function Stats(props) {
                             }}
                             title="Roll"
                             color="#841584"
-                            accessibilityLabel="Learn more about this purple button"
                         />
                         </View>
                      </View>
@@ -254,10 +271,10 @@ export function Stats(props) {
                 flex: 100,
                 backgroundColor: "#032033",
             }}>
-                <Text style={{fontSize: 55, fontFamily: "dungeon", marginTop: -10, textAlign: "center", color: "white"}}>
+                <Text style={{fontSize: 40, fontFamily: "dungeon", marginTop: -10, textAlign: "center", color: "white"}}>
                         Points Remaining
                 </Text>
-                <Text style={{fontSize: 55, fontFamily: "dungeon", marginTop: -10, textAlign: "center", color: "white"}}>
+                <Text style={{fontSize: 40, fontFamily: "dungeon", marginTop: -10, textAlign: "center", color: "white"}}>
                         {remaining}/27
                 </Text>
                 <NumberField setNumber={setNumber} setRemaining={setRemaining} text={"Strength"} number={number} id={0}/>
@@ -266,6 +283,13 @@ export function Stats(props) {
                 <NumberField setNumber={setNumber} setRemaining={setRemaining} text={"Intelligence"} number={number} id={3}/>
                 <NumberField setNumber={setNumber} setRemaining={setRemaining} text={"Wisdom"} number={number} id={4}/>
                 <NumberField setNumber={setNumber} setRemaining={setRemaining} text={"Charisma"} number={number} id={5}/>
+                <Button
+                    onPress={() => {
+                        validate(number, props.navigation)
+                    }}
+                    title="Validate"
+                    color="#841584"
+                />
             </View>
           );
     }
@@ -286,6 +310,13 @@ export function Stats(props) {
                 <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Intelligence"} number={number} id={3} array={array} setArray={setArray}/>
                 <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Wisdom"} number={number} id={4} array={array} setArray={setArray}/>
                 <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Charisma"} number={number} id={5} array={array} setArray={setArray}/>
+                <Button
+                    onPress={() => {
+                        validate(number, props.navigation)
+                    }}
+                    title="Validate"
+                    color="#841584"
+                />
             </View>
           );
     }
@@ -307,6 +338,13 @@ export function Stats(props) {
                 <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Intelligence"} number={number} rolled={rolled} setRolled={setRolled} id={3}/>
                 <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Wisdom"} number={number} rolled={rolled} setRolled={setRolled} id={4}/>
                 <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Charisma"} number={number} rolled={rolled} setRolled={setRolled} id={5}/>
+                <Button
+                    onPress={() => {
+                        validate(number, props.navigation)
+                    }}
+                    title="Validate"
+                    color="#841584"
+                />
             </View>
           );
     }
