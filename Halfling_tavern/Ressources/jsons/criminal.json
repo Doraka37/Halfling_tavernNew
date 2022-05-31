@@ -20,6 +20,7 @@
    "Proficiencies": ["Deception", "Stealth", "Thieves'tools"],
    "Equipments": ["Crowbar", "Dark clothes", "Hood"],
    "Money": [0, 0, 0, 15, 0],
+   "Languages": [],
    "Display":{
       "title":"Proficiencies and Equipments",
       "description":[{"title": "Skill Proficiencies", "desc": "Deception, Stealth"}, {"title": "Tool Proficiencie", "desc": "Thieves'tools, One type of Gaming Set"}, {"title": "Equipment", "desc": "Crowbar, Dark clothes, Hood, 15Gp"}],

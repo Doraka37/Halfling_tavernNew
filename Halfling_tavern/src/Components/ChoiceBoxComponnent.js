@@ -10,6 +10,7 @@ import CheckBox from '@react-native-community/checkbox';
 import { useDispatch } from 'react-redux'
 import { addAbilityScore, removeAbilityScore, addLanguage, removeLanguage, addSkill, removeSkill } from '../../Store/Reducers/baseReducer';
 import { classAddAbilityScore, classRemoveAbilityScore, classAddLanguage, classRemoveLanguage, classAddSkill, classRemoveSkill } from '../../Store/Reducers/charaReducer';
+import { backgroundAddAbilityScore, backgroundRemoveAbilityScore, backgroundAddLanguage, backgroundRemoveLanguage, backgroundAddSkill, backgroundRemoveSkill } from '../../Store/Reducers/backgroundReducer';
 
 export function ChoiceBox({title, desc, choices, nb, type, id, step}) {
     const [refresh, setRefresh] = useState(false);
@@ -67,6 +68,31 @@ export function ChoiceBox({title, desc, choices, nb, type, id, step}) {
         setRefresh(!refresh)
     }
 
+    function backgroundDispatch(newValue, item) {
+        if (newValue == false) {
+            if (type == "Skills")
+                dispatch(backgroundRemoveSkill({value: item.label, id: id}))
+            if (type == "Languages")
+                dispatch(backgroundRemoveLanguage({value: item.label, id: id}))
+            if (type == "AbilityScore")
+                dispatch(backgroundRemoveAbilityScore({value: item.label, id: id}))
+            setCmp(cmp - 1)
+        }
+        if (newValue == true) {
+            if (cmp >= nb)
+                return
+            if (type == "Skills")
+                dispatch(backgroundAddSkill({value: item.label, id: id}))
+            if (type == "Languages")
+                dispatch(backgroundAddLanguage({value: item.label, id: id}))
+            if (type == "AbilityScore")
+                dispatch(backgroundAddAbilityScore({value: item.label, id: id}))
+            setCmp(cmp + 1)
+        }
+        item.checked = newValue
+        setRefresh(!refresh)
+    }
+
     function Check({item}) {
         return (
             <View style={{flexDirection: "row", marginTop: "3%", alignItems: "center"}}>
@@ -77,6 +103,8 @@ export function ChoiceBox({title, desc, choices, nb, type, id, step}) {
                             raceDispatch(newValue, item)
                         if (step == "class")
                             classDispatch(newValue, item)
+                        if (step == "background")
+                            backgroundDispatch(newValue, item)
                     }}
                     style={{alignSelf: "flex-start"}}
                     tintColors={{true: "green", false: "orange"}}

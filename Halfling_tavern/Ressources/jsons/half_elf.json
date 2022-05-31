@@ -2,6 +2,8 @@
    "Race": "Half-Elf",
    "id": 0,
    "Description": "Half-elves combine what some say are the best qualities of their elf and human parents.",
+   "Proficiencies": [],
+   "AbilityScore": [{"stat": "Charisma", "bonus": 2}],
     "Abilities": [
       {
          "title":"Darkvision",

@@ -13,6 +13,7 @@ import Carousel from 'react-native-snap-carousel';
 import { choicesToList } from '../services/utils';
 
 import infosCriminal from "../../Ressources/jsons/criminal.json"
+import BackgroundBottom from '../Components/BackgroundBottom';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
@@ -25,7 +26,7 @@ export function BackgroundDisplay({navigation, infos, id}) {
       if (item.choice != 0 && item.choices) {
           const list = choicesToList(item.choices)
           return (
-              <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={list} type={item.type} id={id} step={"class"}/>
+              <ChoiceBox title={item.title} desc={item.description} nb={item.choice} choices={list} type={item.type} id={id} step={"background"}/>
           );
       } else {
           return (
@@ -62,6 +63,7 @@ export function BackgroundDisplay({navigation, infos, id}) {
             />
             {<BoxList title={infos.Display.title} desc={infos.Display.description}/>}
           </ScrollView>
+          <BackgroundBottom id={id} infos={infos}/>
       </View>
     );
   }
