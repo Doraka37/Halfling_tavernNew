@@ -16,6 +16,7 @@
  import Class from './src/Pages/Class';
  import Stats from './src/Pages/Stats';
  import Background from './src/Pages/Background';
+ import Characteristics from './src/Pages/Characteristics';
 
  const Stack = createNativeStackNavigator();
  
@@ -52,6 +53,11 @@
              name="Background"
              component={Background}
              options={{ title: 'Background' }}
+           />
+           <Stack.Screen
+             name="Characteristics"
+             component={Characteristics}
+             options={{ title: 'Characteristics' }}
            />
          </Stack.Navigator>
        </NavigationContainer>

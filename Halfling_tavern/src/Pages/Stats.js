@@ -202,13 +202,11 @@ export function Stats(props) {
         let tmpNumber = [...number]
         for (let index = 0; index < number.length; index++) {
             if (number[index] === "---") {
-                console.log("wrong");
                 return
             }
             nbr = Number(number[index]) + Number(BonusStats[index])
             tmpNumber[index] = nbr.toString()
         }
-        console.log("tmpNumber: ", tmpNumber);
         dispatch(classSetStats({Strength: tmpNumber[0], Dexterity: tmpNumber[1], Constitution: tmpNumber[2], Intelligence: tmpNumber[3], Wisdom: tmpNumber[4], Charisma: tmpNumber[5]}))
         navigation.navigate('Background')
     }
@@ -246,7 +244,7 @@ export function Stats(props) {
                                 setRefresh(!refresh)
                             }}
                             title="Roll"
-                            color="#841584"
+                            color="#330606"
                         />
                         </View>
                      </View>
@@ -288,7 +286,7 @@ export function Stats(props) {
                         validate(number, props.navigation)
                     }}
                     title="Validate"
-                    color="#841584"
+                    color="#330606"
                 />
             </View>
           );
@@ -315,7 +313,7 @@ export function Stats(props) {
                         validate(number, props.navigation)
                     }}
                     title="Validate"
-                    color="#841584"
+                    color="#330606"
                 />
             </View>
           );
@@ -343,7 +341,7 @@ export function Stats(props) {
                         validate(number, props.navigation)
                     }}
                     title="Validate"
-                    color="#841584"
+                    color="#330606"
                 />
             </View>
           );

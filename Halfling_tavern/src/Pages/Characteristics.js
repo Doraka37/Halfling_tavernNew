@@ -14,13 +14,16 @@ import { choicesToList } from '../services/utils';
 
 import infosCriminal from "../../Ressources/jsons/criminal.json"
 import BackgroundBottom from '../Components/BackgroundBottom';
+import ChoiceBoxRoll from '../Components/ChoiceBoxComponnentRoll';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 3 / 4);
 var array = [{id: 0, race: "Half-Elf", infos: infosCriminal}, {id: 1, race: "Elf", infos: infosCriminal}, {id: 2, race: "Dwarf", infos: infosCriminal}, {id: 3, race: "Gnome", infos: infosCriminal}]
 
-export function BackgroundDisplay({navigation, infos, id}) {
+export function Characteristics(props) {
+  var id = props.route.params.id;
+  var infos = props.route.params.infos;
 
     function renderItem({item}) {
       if (item.choice != 0 && item.choices) {
@@ -41,50 +44,25 @@ export function BackgroundDisplay({navigation, infos, id}) {
         backgroundColor: "#032033",
         alignItems: "center", justifyContent: "center",
       }}>
-        <ScrollView style={{
-          backgroundColor: "#032033",
-          flex: 80
-        }}>
-            <Text style={{fontSize: 60, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}>
-                {infos.Name}
+          <ScrollView style={{
+            backgroundColor: "#032033",
+            flex: 80
+          }}>
+            <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
+              Define yout character personality
             </Text>
-            <View style={{
-              width: "100%",
-              alignItems: "center", justifyContent: "center", marginBottom: 20
-            }}>
-              <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 20, textAlign: "center", color: "white"}}>
-                {infos.Description}
-              </Text>
-            </View>
-            <FlatList
-              data={infos.Abilities}
-              renderItem={renderItem}
-              keyExtractor={item => item.title}
-            />
-            {<BoxList title={infos.Display.title} desc={infos.Display.description}/>}
+            <ChoiceBoxRoll title={"Specialty"} desc={infos.Specialty.description} choices={choicesToList(infos.Specialty.choices)} type={"Specialty"} id={id} step={"background"}/>
+            <Text style={{fontSize: 30, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
+              {infos.Characteristics.description} 
+            </Text>
+            <ChoiceBoxRoll title={"Personality"} desc={""} choices={choicesToList(infos.Characteristics.PersonalityTrait)} type={"Personality"} id={id} step={"background"}/>
+            <ChoiceBoxRoll title={"Ideal"} desc={""} choices={choicesToList(infos.Characteristics.Ideal)} type={"Ideal"} id={id} step={"background"}/>
+            <ChoiceBoxRoll title={"Bond"} desc={""} choices={choicesToList(infos.Characteristics.Bond)} type={"Bond"} id={id} step={"background"}/>
+            <ChoiceBoxRoll title={"Flaw"} desc={""} choices={choicesToList(infos.Characteristics.Flaw)} type={"Flaw"} id={id} step={"background"}/>
           </ScrollView>
-          <BackgroundBottom id={id} infos={infos} navigation={navigation}/>
+          <BackgroundBottom id={id} infos={infos}/>
       </View>
     );
   }
 
-  export function Background(props) {
-
-    return (
-      <View style={{
-        flex: 100
-    }}>
-        <Carousel
-            style={{flex: 100}}
-            data={array}
-            keyExtractor={(item) => item.id}
-            sliderWidth={SLIDER_WIDTH}
-            itemWidth={ITEM_WIDTH}
-            renderItem={({item}) => (
-                <BackgroundDisplay navigation={props.navigation} infos={item.infos} id={item.id}/>
-            )}
-        />
-      </View>
-    );
-  }
-export default Background;
+export default Characteristics;

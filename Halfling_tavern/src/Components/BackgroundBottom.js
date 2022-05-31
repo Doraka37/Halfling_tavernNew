@@ -8,7 +8,7 @@ import {
   } from 'react-native';
 import { backgroundAddLanguages, backgroundAddProficiencies, backgroundAddAbilities, backgroundAddEquipments } from '../../Store/Reducers/backgroundReducer';
 
-function BackgroundBottom({id, background, navigation, infos}) {
+function BackgroundBottom({id, navigation, infos}) {
     const backInfos = useSelector((state) => state.background)
     const dispatch = useDispatch()
     const [backBool, setBackBool] = useState([])
@@ -17,7 +17,8 @@ function BackgroundBottom({id, background, navigation, infos}) {
             backgroundColor: "#330606",
             alignItems: "center", justifyContent: "center",
             width: 400,
-            height: 80
+            height: 80,
+            marginTop: "5%"
         }}>
             <TouchableOpacity style={{
                     backgroundColor: "#330606",
@@ -41,6 +42,10 @@ function BackgroundBottom({id, background, navigation, infos}) {
                         dispatch(backgroundAddAbilities({value: abilities, id: id}))
                         dispatch(backgroundAddEquipments({value: infos.Equipments, id: id}))
                     }
+                    navigation.navigate('Characteristics', {
+                        infos: infos,
+                        id: id
+                    })
                     setBackBool(tmpBackground)
                 }
             }>
