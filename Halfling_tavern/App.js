@@ -17,6 +17,7 @@
  import Stats from './src/Pages/Stats';
  import Background from './src/Pages/Background';
  import Characteristics from './src/Pages/Characteristics';
+ import Physics from './src/Pages/Physics';
 
  const Stack = createNativeStackNavigator();
  
@@ -58,6 +59,11 @@
              name="Characteristics"
              component={Characteristics}
              options={{ title: 'Characteristics' }}
+           />
+           <Stack.Screen
+             name="Physics"
+             component={Physics}
+             options={{ title: 'Physics' }}
            />
          </Stack.Navigator>
        </NavigationContainer>

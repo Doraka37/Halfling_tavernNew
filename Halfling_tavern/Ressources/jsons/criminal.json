@@ -36,7 +36,7 @@
    "Characteristics": {
          "description":"Criminals might seem like villains on the surface, and many of them are villainous to the core. But some have an abundance of endearing, if not redeeming, characteristics. There might be honor among thieves, but criminals rarely show any respect for law or authority.",
          "PersonalityTrait": ["I always have a plan for what to do when things go wrong. ", " I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.", "The first thing I do in a new place is note the locations of everything valuable—or where such things could be hidden.", "I would rather make a new friend than a new enemy.", "I am incredibly slow to trust. Those who seem the fairest often have the most to hide.", "I don’t pay attention to the risks in a situation. Never tell me the odds.", "The best way to get me to do something is to tell me I can’t do it.", "I blow up at the slightest insult."],
-         "Ideal": ["Blackmailer", "Burglar", "Enforcer", "Fence", "Highway robber", "Hired killer", "Pickpocket", "Smuggler"],
+         "Ideal": ["Honor. I don’t steal from others in the trade. (Lawful) ", "Freedom. Chains are meant to be broken, as are those who would forge them. (Chaotic)", "Enforcer", "Fence", "Highway robber", "Hired killer", "Pickpocket", "Smuggler"],
          "Bond": ["Blackmailer", "Burglar", "Enforcer", "Fence", "Highway robber", "Hired killer", "Pickpocket", "Smuggler"],
          "Flaw": ["Blackmailer", "Burglar", "Enforcer", "Fence", "Highway robber", "Hired killer", "Pickpocket", "Smuggler"],
          "level": 0

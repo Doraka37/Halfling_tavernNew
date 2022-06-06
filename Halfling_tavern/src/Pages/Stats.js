@@ -188,12 +188,17 @@ export function Stats(props) {
         let tmpRoll = rolled
         tmpRoll[id] = true
         setRolled(tmpRoll)
-        let nbr = 0
+        let resultTmp = 0
+        let array = []
         for (let j = 0; j < 4; j+= 1) {
-            nbr += Math.floor(Math.random() * 6) + 1
+        array.push(Math.floor(Math.random() * 6) + 1)
         }
+        array.sort(function(a, b) {
+        return b - a;
+        });
+        resultTmp = array[0] + array[1] + array[2]
         let tmpNumber = [...number]
-        tmpNumber[id] = nbr.toString()
+        tmpNumber[id] = resultTmp.toString()
         setNumber(tmpNumber)
     }
 
