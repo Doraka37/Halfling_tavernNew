@@ -18,6 +18,7 @@
  import Background from './src/Pages/Background';
  import Characteristics from './src/Pages/Characteristics';
  import Physics from './src/Pages/Physics';
+ import Alignment from './src/Pages/Alignment';
 
  const Stack = createNativeStackNavigator();
  
@@ -64,6 +65,11 @@
              name="Physics"
              component={Physics}
              options={{ title: 'Physics' }}
+           />
+           <Stack.Screen
+             name="Alignment"
+             component={Alignment}
+             options={{ title: 'Alignment' }}
            />
          </Stack.Navigator>
        </NavigationContainer>

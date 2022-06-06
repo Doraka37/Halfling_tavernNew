@@ -74,15 +74,9 @@ export function Physics(props) {
                     width: "80%",
                 }}
                 onPress={() => {
-                  console.log("backInfos: ", JSON.stringify(backInfos));
                   let tmpTraits = {Hair: traits[0], Skin: traits[1], Eyes: traits[2], Height: traits[3], Weight: traits[4], Age: traits[5], Gender: traits[6]}
-                  console.log("traits: ", traits);
-                  console.log("tmpTraits: ", tmpTraits);
                   dispatch(backgroundSetTraits(tmpTraits))
-                  /*navigation.navigate('Characteristics', {
-                      infos: infos,
-                      id: id
-                  })*/
+                  props.navigation.navigate('Alignment')
               }
             }
             >
