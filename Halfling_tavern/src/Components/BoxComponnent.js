@@ -5,8 +5,8 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-export function Box({title, desc}) {
-    const [extend, setExtend] = useState(true);
+export function Box({title, desc, extended}) {
+    const [extend, setExtend] = useState(extended);
 
     return (
         <View style={{width: "100%", alignItems: "center", justifyContent: "center", marginTop: 10, marginBottom: 10}}>

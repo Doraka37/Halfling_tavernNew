@@ -105,6 +105,7 @@ export function Alignment(props) {
                   console.log("backInfos: ", JSON.stringify(backInfos));
                   dispatch(backgroundSetLifestyle(lifestyle))
                   dispatch(backgroundSetAlignment(alignment))
+                  props.navigation.navigate('Sheet')
               }
             }
             >

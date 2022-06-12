@@ -6,7 +6,7 @@ import {
     View,
     TouchableOpacity
   } from 'react-native';
-import { backgroundAddLanguages, backgroundAddProficiencies, backgroundAddAbilities, backgroundAddEquipments } from '../../Store/Reducers/backgroundReducer';
+import { backgroundAddLanguages, backgroundAddProficiencies, backgroundAddAbilities, backgroundAddEquipments, setBackgroundId } from '../../Store/Reducers/backgroundReducer';
 
 function CharacteristicsBottom({id, navigation, infos}) {
     const backInfos = useSelector((state) => state.background)
@@ -34,8 +34,9 @@ function CharacteristicsBottom({id, navigation, infos}) {
                         tmpBackground[id] = true
 
                     }
-                    navigation.navigate('Physics')
+                    dispatch(setBackgroundId(id))
                     setBackBool(tmpBackground)
+                    navigation.navigate('Physics')
                 }
             }>
                 <View style={{

@@ -36,9 +36,10 @@ function BackgroundBottom({id, navigation, infos}) {
                         dispatch(backgroundAddProficiencies({value: infos.Proficiencies, id: id}))
                         let abilities = []
                         for (let index = 0; index < infos.Abilities.length; index++) {
-                            if (infos.Abilities[index].level == 1)
+                            if (infos.Abilities[index].level <= 1)
                                 abilities.push(infos.Abilities[index])
                         }
+                        console.log("abilities", abilities);
                         dispatch(backgroundAddAbilities({value: abilities, id: id}))
                         dispatch(backgroundAddEquipments({value: infos.Equipments, id: id}))
                     }

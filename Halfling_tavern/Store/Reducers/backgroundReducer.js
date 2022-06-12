@@ -22,6 +22,7 @@ const bkackgroundSlice = createSlice({
     equipments: []
   }],
   raceId: 0,
+  backgroundId: 0,
   abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0},
   traits: {Hair: "", Skin: "", Eyes: "", Height: "", Weight: "", Age: "", Gender: ""},
   lifestyle: "",
@@ -101,6 +102,9 @@ const bkackgroundSlice = createSlice({
     setRaceId: (state, action) => {
       state.raceId = action.payload
     },
+    setBackgroundId: (state, action) => {
+      state.raceId = action.payload
+    },
     backgroundSetLifestyle: (state, action) => {
       state.lifestyle = action.payload
     },
@@ -128,5 +132,5 @@ const bkackgroundSlice = createSlice({
 })
   
   export const {backgroundAddSkill, backgroundRemoveSkill, backgroundAddbackground, backgroundAddLanguage, backgroundRemoveLanguage, backgroundAddAbilityScore, backgroundRemoveAbilityScore, backgroundAddLanguages, backgroundAddProficiencies, reset, backgroundAddAbilities,
-    setRaceId, backgroundSetStats, backgroundAddEquipments, backgroundSetTraits, backgroundSetLifestyle, backgroundSetAlignment } = bkackgroundSlice.actions
+    setRaceId, backgroundSetStats, backgroundAddEquipments, backgroundSetTraits, backgroundSetLifestyle, backgroundSetAlignment, setBackgroundId } = bkackgroundSlice.actions
   export default bkackgroundSlice.reducer;

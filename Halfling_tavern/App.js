@@ -19,6 +19,7 @@
  import Characteristics from './src/Pages/Characteristics';
  import Physics from './src/Pages/Physics';
  import Alignment from './src/Pages/Alignment';
+ import Sheet from './src/Pages/Sheet';
 
  const Stack = createNativeStackNavigator();
  
@@ -70,6 +71,11 @@
              name="Alignment"
              component={Alignment}
              options={{ title: 'Alignment' }}
+           />
+           <Stack.Screen
+             name="Sheet"
+             component={Sheet}
+             options={{ title: 'Sheet' }}
            />
          </Stack.Navigator>
        </NavigationContainer>

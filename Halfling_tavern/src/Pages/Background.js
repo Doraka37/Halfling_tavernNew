@@ -30,7 +30,7 @@ export function BackgroundDisplay({navigation, infos, id}) {
           );
       } else {
           return (
-              <Box title={item.title} desc={item.description}/>
+              <Box extended={true} title={item.title} desc={item.description}/>
           );
       } 
     }

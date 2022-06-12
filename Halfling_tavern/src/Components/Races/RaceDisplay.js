@@ -21,7 +21,7 @@ function RaceDisplay({id, race, navigation, infos, reset, setReset}) {
             );
         } else {
             return (
-                <Box title={item.title} desc={item.description}/>
+                <Box extended={true} title={item.title} desc={item.description}/>
             );
         }           
     }

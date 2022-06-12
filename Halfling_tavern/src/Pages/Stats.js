@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux'
 import ModalDropdown from 'react-native-modal-dropdown';
-import { classSetStats } from '../../Store/Reducers/charaReducer';
+import { classSetStats, setClassId } from '../../Store/Reducers/charaReducer';
 
 function roll() {
     let array = []
@@ -213,6 +213,7 @@ export function Stats(props) {
             tmpNumber[index] = nbr.toString()
         }
         dispatch(classSetStats({Strength: tmpNumber[0], Dexterity: tmpNumber[1], Constitution: tmpNumber[2], Intelligence: tmpNumber[3], Wisdom: tmpNumber[4], Charisma: tmpNumber[5]}))
+        dispatch(setClassId(classId))
         navigation.navigate('Background')
     }
 
