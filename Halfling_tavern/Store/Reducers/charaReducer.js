@@ -19,6 +19,7 @@ const charaSlice = createSlice({
     languages: [],
     abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0},
     speed: 0,
+    equipments: []
   }],
   raceId: 0,
   abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0},
@@ -55,6 +56,16 @@ const charaSlice = createSlice({
         state.class[action.payload.id].abilities.push(action.payload.value[index])
       }
     },
+    classAddEquipment: (state, action) => {
+      sizeUp(state, action)
+      state.class[action.payload.id].equipments = [action.payload.value, ...state.class[action.payload.id].equipments]
+    },
+    classAddEquipments: (state, action) => {
+      sizeUp(state, action)
+      for (let index = 0; index < action.payload.value.length; index++) {
+        state.class[action.payload.id].equipments.push(action.payload.value[index])
+      }
+    },
     classRemoveSkill: (state, action) => {
       sizeUp(state, action)
       for (let index = 0; index < state.class[action.payload.id].skills.length; index++) {
@@ -69,6 +80,15 @@ const charaSlice = createSlice({
       for (let index = 0; index < state.class[action.payload.id].languages.length; index++) {
         if (action.payload.value == state.class[action.payload.id].languages[index]) {
           state.class[action.payload.id].languages.splice(index, 1)
+          return
+        }
+      }
+    },
+    classRemoveEquipment: (state, action) => {
+      sizeUp(state, action)
+      for (let index = 0; index < state.class[action.payload.id].equipments.length; index++) {
+        if (action.payload.value == state.class[action.payload.id].equipments[index]) {
+          state.class[action.payload.id].equipments.splice(index, 1)
           return
         }
       }
@@ -106,5 +126,6 @@ const charaSlice = createSlice({
   }
 })
   
-  export const {classAddSkill, classRemoveSkill, classAddClass, classAddLanguage, classRemoveLanguage, classAddAbilityScore, classRemoveAbilityScore, classAddLanguages, classAddProficiencies, reset, classAddAbilities, setRaceId, classSetStats, setClassId } = charaSlice.actions
+  export const {classAddSkill, classRemoveSkill, classAddClass, classAddLanguage, classRemoveLanguage, classAddAbilityScore, classRemoveAbilityScore, classAddLanguages, classAddProficiencies, reset,
+     classAddAbilities, setRaceId, classSetStats, setClassId, classAddEquipment, classRemoveEquipment, classAddEquipments } = charaSlice.actions
   export default charaSlice.reducer;

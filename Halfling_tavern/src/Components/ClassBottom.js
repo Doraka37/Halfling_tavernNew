@@ -6,7 +6,7 @@ import {
     View,
     TouchableOpacity
   } from 'react-native';
-import { classAddAbilities, classAddProficiencies } from '../../Store/Reducers/charaReducer';
+import { classAddAbilities, classAddEquipment, classAddEquipments, classAddProficiencies } from '../../Store/Reducers/charaReducer';
 
 function ClassBottom({id, clas, navigation, infos}) {
     const classe = useSelector((state) => state.chara.class)
@@ -39,6 +39,15 @@ function ClassBottom({id, clas, navigation, infos}) {
                                 abilities.push(infos.Abilities[index])
                         }
                         dispatch(classAddAbilities({value: abilities, id: id}))
+                        let equipments = []
+                        for (let index = 0; index < infos.Equipments.length; index++) {
+                            if (infos.Equipments[index].choice == 0) {
+                                for (let i = 0; i < infos.Equipments[index].choices.length; i++) {
+                                    equipments.push(infos.Equipments[index].choices[i])
+                                }
+                            }
+                        }
+                        dispatch(classAddEquipments({value: equipments, id: id}))
                     }
                     setClassBool(tmpClass)
                     navigation.navigate('Stats', {

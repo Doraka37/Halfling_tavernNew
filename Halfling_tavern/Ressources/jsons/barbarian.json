@@ -42,5 +42,24 @@
       "description":[{"title": "Hit Dice", "desc": "1d12 per barbarian level"}, {"title": "Hit Points at 1st Level", "desc": "12 + your Constitution modifier"}, {"title": "Hit Points at Higher Levels", "desc": "1d12 (or 7) + your Constitution modifier per barbarian level after 1st"}],
       "choice": 0,
       "level": 1
-   }
+   },
+   "Equipments":
+      [
+         {
+            "choice": 1,
+            "choices": ["Rapier", "Longsword", "Simple Weapon"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Diplomat's pack", "Entertainer’s pack"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Lute", "Any other musical instrument"]
+         },
+         {
+            "choice": 0,
+            "choices": ["Leather armor", "Dagger"]
+         }
+      ]
  }

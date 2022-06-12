@@ -12,11 +12,19 @@ import ChoiceBox from '../ChoiceBoxComponnent';
 import ClassBottom from '../ClassBottom';
 import { choicesToList } from '../../services/utils';
 import ClassTop from './ClassTop';
+import EquipmentsChoice from '../EquipmentsChoice';
 
 var imageList = [require("../../../Ressources/guerrier.jpg"), require("../../../Ressources/wizard.jpg")]
 function ClassDisplay({clas, race, navigation, infos, id}) {
     let list = choicesToList(infos.Proficiencies.choices)
 
+    let listArray = []
+
+    for (let index = 0; index < infos.Equipments.length; index++) {
+        const element = choicesToList(infos.Equipments[index].choices)
+        listArray.push({choices: element, choice: infos.Equipments[index].choice})
+        
+    }
     function renderItem({item}) {
         if (item.choice != 0 && item.choices) {
             const list = choicesToList(item.choices)
@@ -48,6 +56,7 @@ function ClassDisplay({clas, race, navigation, infos, id}) {
                 />
                 <BoxList title={infos.HitPoints.title} desc={infos.HitPoints.description}/>
                 <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type} step={"class"} id={id}/>
+                <EquipmentsChoice equipments={infos.Equipments} list={listArray} id={id}/>
             </ScrollView>
             <ClassBottom clas={clas} navigation={navigation} infos={infos} id={infos.id}/>
         </View>
