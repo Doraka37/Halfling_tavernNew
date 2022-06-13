@@ -20,6 +20,7 @@
  import Physics from './src/Pages/Physics';
  import Alignment from './src/Pages/Alignment';
  import Sheet from './src/Pages/Sheet';
+ import Spells from './src/Pages/Spells';
 
  const Stack = createNativeStackNavigator();
  
@@ -76,6 +77,11 @@
              name="Sheet"
              component={Sheet}
              options={{ title: 'Sheet' }}
+           />
+           <Stack.Screen
+             name="Spells"
+             component={Spells}
+             options={{ title: 'Spells' }}
            />
          </Stack.Navigator>
        </NavigationContainer>

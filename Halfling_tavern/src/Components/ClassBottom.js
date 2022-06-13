@@ -50,9 +50,10 @@ function ClassBottom({id, clas, navigation, infos}) {
                         dispatch(classAddEquipments({value: equipments, id: id}))
                     }
                     setClassBool(tmpClass)
-                    navigation.navigate('Stats', {
+                    navigation.navigate('Spells', {
                         clas: clas,
-                        classId: id
+                        classId: id,
+                        infos: infos
                     })
                 }
             }>

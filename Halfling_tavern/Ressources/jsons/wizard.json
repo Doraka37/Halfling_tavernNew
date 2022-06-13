@@ -13,14 +13,16 @@
       {
          "title":"Cantrips",
          "description":"At 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.",
-         "choice": 0,
-         "level": 1
+         "choice": 3,
+         "level": 1,
+         "SpellInfos": {"level": "Cantrip", "classes" : ["Wizard"]}
       },
       {
          "title":"Spellbook",
          "description":"At 1st level, you have a spellbook containing six 1st-level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind.",
-         "choice": 0,
-         "level": 1
+         "choice": 6,
+         "level": 1,
+         "SpellInfos": {"level": "1st-level", "classes" : ["Wizard"]}  
       },
       {
          "title":"Arcane Recovery",

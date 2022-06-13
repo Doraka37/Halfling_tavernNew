@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 function sizeUp(state, action) {
     while (state.class.length < action.payload.id + 1) {
-      state.class.push({ race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0, })
+      state.class.push({ race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0, equipments: [], spells: [] })
     }
 }
 
@@ -19,7 +19,8 @@ const charaSlice = createSlice({
     languages: [],
     abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0},
     speed: 0,
-    equipments: []
+    equipments: [],
+    spells: []
   }],
   raceId: 0,
   abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0},
@@ -66,6 +67,10 @@ const charaSlice = createSlice({
         state.class[action.payload.id].equipments.push(action.payload.value[index])
       }
     },
+    classAddSpell: (state, action) => {
+      sizeUp(state, action)
+      state.class[action.payload.id].spells = [action.payload.value, ...state.class[action.payload.id].spells]
+    },
     classRemoveSkill: (state, action) => {
       sizeUp(state, action)
       for (let index = 0; index < state.class[action.payload.id].skills.length; index++) {
@@ -89,6 +94,15 @@ const charaSlice = createSlice({
       for (let index = 0; index < state.class[action.payload.id].equipments.length; index++) {
         if (action.payload.value == state.class[action.payload.id].equipments[index]) {
           state.class[action.payload.id].equipments.splice(index, 1)
+          return
+        }
+      }
+    },
+    classRemoveSpell: (state, action) => {
+      sizeUp(state, action)
+      for (let index = 0; index < state.class[action.payload.id].spells.length; index++) {
+        if (action.payload.value == state.class[action.payload.id].spells[index]) {
+          state.class[action.payload.id].spells.splice(index, 1)
           return
         }
       }
@@ -127,5 +141,6 @@ const charaSlice = createSlice({
 })
   
   export const {classAddSkill, classRemoveSkill, classAddClass, classAddLanguage, classRemoveLanguage, classAddAbilityScore, classRemoveAbilityScore, classAddLanguages, classAddProficiencies, reset,
-     classAddAbilities, setRaceId, classSetStats, setClassId, classAddEquipment, classRemoveEquipment, classAddEquipments } = charaSlice.actions
+     classAddAbilities, setRaceId, classSetStats, setClassId, classAddEquipment, classRemoveEquipment, classAddEquipments,
+      classRemoveSpell, classAddSpell } = charaSlice.actions
   export default charaSlice.reducer;
