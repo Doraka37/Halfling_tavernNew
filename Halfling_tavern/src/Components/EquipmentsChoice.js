@@ -88,9 +88,9 @@ export function EquipmentsChoice({equipments, list, id}) {
     }
 
     return (
-        <View style={{width: "100%", alignItems: "center", justifyContent: "center", marginTop: 10, marginBottom: 10}}>
+        <View style={{width: "100%", alignItems: "center", justifyContent: "center", marginTop: 10, marginBottom: 10, paddingLeft: 10, paddingRight: 10}}>
             <TouchableOpacity style={{
-                    width: "80%",
+                    width: "100%",
                     backgroundColor: "grey",
                     alignItems: "center", justifyContent: "center",
                 }}
@@ -104,7 +104,7 @@ export function EquipmentsChoice({equipments, list, id}) {
                 </View>
             </TouchableOpacity>
             {extend == true && (<View style={{
-                width: "80%",
+                width: "100%",
                 backgroundColor: "#090F2E",
                 alignItems: "center", justifyContent: "center",
             }}>

@@ -37,7 +37,7 @@ export function SpellChoice({nb, spellList, name, id}) {
         if (newValue == true) {
             if (cmp >= nb)
                 return
-            dispatch(classAddSpell({value: item.name, id: id}))
+            dispatch(classAddSpell({value: {name: item.name, desc: item.desc}, id: id}))
             let tmpCheck = [...checked]
             tmpCheck[index] = newValue
             setChecked(tmpCheck)

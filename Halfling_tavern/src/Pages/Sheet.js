@@ -34,10 +34,19 @@ export function Sheet(props) {
     let abilities = classInfos.abilities.concat(raceInfos.abilities)
     abilities = abilities.concat(charaInfos.abilities)
 
+    let spells = classInfos.spells
+
+    console.log("spells: ", spells);
 
     function renderItem({item}) {
       return (
           <Box extended={false} title={item.title} desc={item.description}/>
+      );
+    }
+
+    function renderSpells({item}) {
+      return (
+          <Box extended={false} title={item.name} desc={item.desc}/>
       );
     } 
 
@@ -55,10 +64,21 @@ export function Sheet(props) {
             <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
               Character Sheet
             </Text>
+            <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
+              Your character abilities:
+            </Text>
             <FlatList
                 data={abilities}
                 renderItem={renderItem}
                 keyExtractor={item => item.title}
+            />
+            <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
+              Your character spells:
+            </Text>
+            <FlatList
+                data={spells}
+                renderItem={renderSpells}
+                keyExtractor={item => item.name}
             />
           </ScrollView>
       </View>

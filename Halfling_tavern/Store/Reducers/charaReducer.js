@@ -101,7 +101,7 @@ const charaSlice = createSlice({
     classRemoveSpell: (state, action) => {
       sizeUp(state, action)
       for (let index = 0; index < state.class[action.payload.id].spells.length; index++) {
-        if (action.payload.value == state.class[action.payload.id].spells[index]) {
+        if (action.payload.value == state.class[action.payload.id].spells[index].name) {
           state.class[action.payload.id].spells.splice(index, 1)
           return
         }
