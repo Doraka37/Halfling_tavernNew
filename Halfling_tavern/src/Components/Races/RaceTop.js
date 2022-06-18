@@ -6,7 +6,6 @@ import {
   } from 'react-native';
 
 function RaceTop({race, image, description}) {
-    console.log("image: ",image);
     return (
         <View style={{
             backgroundColor: "#032033",

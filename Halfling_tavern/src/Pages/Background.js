@@ -17,7 +17,7 @@ import BackgroundBottom from '../Components/BackgroundBottom';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
-const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 3 / 4);
+
 var array = [{id: 0, race: "Half-Elf", infos: infosCriminal}, {id: 1, race: "Elf", infos: infosCriminal}, {id: 2, race: "Dwarf", infos: infosCriminal}, {id: 3, race: "Gnome", infos: infosCriminal}]
 
 export function BackgroundDisplay({navigation, infos, id}) {

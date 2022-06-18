@@ -11,8 +11,8 @@ import infosWizard from "../../Ressources/jsons/wizard.json"
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
-const ITEM_HEIGHT = Math.round(ITEM_WIDTH * 3 / 4);
-import list from "../../Ressources/class_array.json"
+
+import { list } from "../../Ressources/class_array"
 import { useDispatch } from 'react-redux'
 import { setRaceId } from '../../Store/Reducers/charaReducer';
 
@@ -35,22 +35,8 @@ export function TextComp({title, desc}) {
     );
 }
 
-function ClassComponnent({clas, race, navigation, raceId}) {
-    switch(clas){
-        case "Barbarian":
-            return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infosBarbarian} id={0}/>
-        case "Sorcier":
-            return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infosWizard} id={1}/>
-        default:
-            return <View style={{
-                backgroundColor: "#330606",
-                width: "100%",
-            }}>
-                <Text style={{fontSize: 60, fontFamily: "dungeon", marginTop: -10, textAlign: "center"}}>
-                    Choisir cette race3
-                </Text>
-            </View>
-    }
+function ClassComponnent({clas, race, navigation, raceId, infos, id}) {
+    return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infos} id={id}/>
 }
 
 export function Class(props) {
@@ -70,7 +56,7 @@ export function Class(props) {
             sliderWidth={SLIDER_WIDTH}
             itemWidth={ITEM_WIDTH}
             renderItem={({ item }) => (
-                <ClassComponnent clas={item} race={race} navigation={props.navigation} raceId={raceId}/>
+                <ClassComponnent clas={item.clas} race={race} navigation={props.navigation} raceId={raceId} infos={item.infos} id={item.id}/>
             )}
         />
       </View>

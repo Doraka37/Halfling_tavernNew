@@ -28,10 +28,6 @@ export function Race(props) {
             renderItem={({ item }) => (
                 <RaceComponnent race={item.race} id={item.id} navigation={props.navigation} reset={resete} setReset={setReset} infos={item.infos}/>
             )}
-            onSnapToItem={() => {
-               //dispatch(reset())
-              //setReset(true)
-            }}
         />
       </View>
     );

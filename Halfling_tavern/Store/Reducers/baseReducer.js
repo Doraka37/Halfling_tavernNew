@@ -28,7 +28,6 @@ const raceSlice = createSlice({
     addLanguage: (state, action) => {
       sizeUp(state, action)
       state.character[action.payload.id].languages = [action.payload.value, ...state.character[action.payload.id].languages]
-      console.log("state.character: ", state.character);
     },
     addLanguages: (state, action) => {
       sizeUp(state, action)
@@ -49,21 +48,18 @@ const raceSlice = createSlice({
       for (let index = 0; index < action.payload.value.length; index++) {
         state.character[action.payload.id].proficiencies.push(action.payload.value[index])
       }
-      console.log("state.character: ", state.character[action.payload.id]);
     },
     addStats: (state, action) => {
       sizeUp(state, action)
       for (let index = 0; index < action.payload.value.length; index++) {
         state.character[action.payload.id].abilityScore[action.payload.value[index].stat] += action.payload.value[index].bonus
       }
-      console.log("state.character: ", state.character[action.payload.id]);
     },
     addAbilities: (state, action) => {
       sizeUp(state, action)
       for (let index = 0; index < action.payload.value.length; index++) {
         state.character[action.payload.id].abilities.push(action.payload.value[index])
       }
-      console.log("state.character: ", state.character[action.payload.id]);
     },
     removeSkill: (state, action) => {
       sizeUp(state, action)
@@ -88,7 +84,6 @@ const raceSlice = createSlice({
         state.character[action.payload.id].abilityScore[action.payload.value] -= 1
     },
     reset: (state, action) => {
-      console.log("action: ", action);
       sizeUp(state, action)
       console.log("state: ", state);
       Object.assign(state.character[action.payload.id], { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0})

@@ -17,7 +17,6 @@ function SubRace({id, race, navigation}) {
     const dispatch = useDispatch()
 
     function SubRaceComponnent({id, race, navigation}) {
-        console.log("id! ", id, " sub: ", sub);
         switch(id){
             case infos.SubRaces[0].id:
                 return <RaceDisplay race={infos.SubRaces[0].Race} id={sub} navigation={navigation} infos={infos.SubRaces[0]}/>

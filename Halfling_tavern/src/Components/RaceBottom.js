@@ -9,7 +9,7 @@ import {
 import { addLanguages, addSpeed, addProficiencies, addStats, addAbilities } from '../../Store/Reducers/baseReducer';
 
 function RaceBottom({id, race, navigation, infos}) {
-    const character = useSelector((state) => state.character)
+    const character = useSelector((state) => state.chara.character)
     const dispatch = useDispatch()
     const [raceBool, setRaceBool] = useState([])
     return (
@@ -24,7 +24,7 @@ function RaceBottom({id, race, navigation, infos}) {
                     width: "80%",
                 }}
                 onPress={() => {
-                    console.log("character: ", character);
+                    console.log("\n\n\n\ncharacter: ", character);
                     let tmpRace = raceBool
                     while (tmpRace.length < id + 1) {
                         tmpRace.push(false)

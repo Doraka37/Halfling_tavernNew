@@ -7,7 +7,6 @@ import {
   import {TextComp} from '../../Pages/Class'
 
 function ClassTop({race, clas, image, description, stats, races}) {
-    console.log("image: ",image);
     return (
         <View style={{
             backgroundColor: "#032033",

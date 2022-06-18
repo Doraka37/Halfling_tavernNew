@@ -66,7 +66,7 @@ export function Spells(props) {
                     width: "100%",
                 }}>
                     <Text style={{fontSize: 55, fontFamily: "dungeon", marginTop: "1%", textAlign: "center", color: "white"}}>
-                        Pick this class
+                        Validate
                     </Text>
                 </View>
             </TouchableOpacity>

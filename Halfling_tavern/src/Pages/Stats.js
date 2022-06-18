@@ -12,26 +12,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import ModalDropdown from 'react-native-modal-dropdown';
 import { classSetStats, setClassId } from '../../Store/Reducers/charaReducer';
 
-function roll() {
-    let array = []
-    let finalArray = []
-    let resultTmp = 0
-
-    for (let i = 0; i < 6; i+= 1) {
-        array = []
-        for (let j = 0; j < 4; j+= 1) {
-            array.push(Math.floor(Math.random() * 6) + 1)
-        }
-        array.sort(function(a, b) {
-            return b - a;
-        });
-        resultTmp = array[0] + array[1] + array[2]
-        finalArray.push(resultTmp)
-        console.log(array)
-    }
-    console.log(finalArray)
-}
-
 function pointBuy(array) {
     let point = 27
     let returnValue = 0;
@@ -52,7 +32,6 @@ function pointBuy(array) {
         console.log("error")
         return returnValue
     }
-    console.log(point)
     return point
 }
 
@@ -80,15 +59,6 @@ export function Stats(props) {
 
     console.log("BonusStats: ", BonusStats);
     
-    function totalStats(number) {
-        let tot = 0
-        for (let index = 0; index < number.length; index++) {
-            tot += Number(number[index])
-        }
-        console.log("tot: ", tot);
-        return tot
-    }
-
     function Select({text, id}) {
         let backcolor = "#090F2E"
         if (sub == id) 

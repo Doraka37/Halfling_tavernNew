@@ -56,7 +56,7 @@ export function Alignment(props) {
             flex: 80
           }}>
             <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
-              Define yout character Physical traits
+              Define yout character Personality traits
             </Text>
               <View style={{flex: 1000, flexDirection: "row", marginTop: 10}}>
                 <Select setAlignment={setAlignment} text={"LawFul Good"} id={0}/>
