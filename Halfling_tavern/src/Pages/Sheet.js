@@ -13,6 +13,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { backgroundSetAlignment, backgroundSetLifestyle, backgroundSetTraits } from '../../Store/Reducers/backgroundReducer';
 import desc from "../../Ressources/jsons/aligments.json"
 import Box from '../Components/BoxComponnent';
+import BoxEquipment from '../Components/BoxEquipment';
+import BoxStats from '../Components/BoxStats';
+import BoxTraits from '../Components/BoxTraits';
+import BoxPhysics from '../Components/BoxPhysics';
 
 export function Sheet(props) {
 
@@ -33,10 +37,15 @@ export function Sheet(props) {
 
     let abilities = classInfos.abilities.concat(raceInfos.abilities)
     abilities = abilities.concat(charaInfos.abilities)
-
     let spells = classInfos.spells
-
-    console.log("spells: ", spells);
+    let equipments = classInfos.equipments.concat(charaInfos.equipments)
+    let stats = useSelector((state) => state.chara.abilityScore)
+    let proficiencies = classInfos.proficiencies.concat(raceInfos.proficiencies)
+    proficiencies = proficiencies.concat(charaInfos.proficiencies)
+    let personality = charaInfos.personality
+    let alignement =  useSelector((state) =>state.background.alignment)
+    let lifestyle =  useSelector((state) =>state.background.lifestyle)
+    let physics = useSelector((state) =>state.background.traits)
 
     function renderItem({item}) {
       return (
@@ -48,7 +57,7 @@ export function Sheet(props) {
       return (
           <Box extended={false} title={item.name} desc={item.desc}/>
       );
-    } 
+    }
 
 
     return (
@@ -73,6 +82,10 @@ export function Sheet(props) {
                 keyExtractor={item => item.title}
             />
             <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
+              Your character profieciencies:
+            </Text>
+            <BoxEquipment equipments={proficiencies} extended={false} title={"Proficiencies:"}/>
+            <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
               Your character spells:
             </Text>
             <FlatList
@@ -80,6 +93,19 @@ export function Sheet(props) {
                 renderItem={renderSpells}
                 keyExtractor={item => item.name}
             />
+            <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
+              Your character equipment:
+            </Text>
+            <BoxEquipment equipments={equipments} extended={false} title={"Equipments:"}/>
+            <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
+              Your character stats:
+            </Text>
+            <BoxStats stats={stats} extended={false}/>
+            <Text style={{fontSize: 50, textAlign: "center", fontFamily: "dungeon", marginTop: 20, color: "white"}}> 
+              Your character traits:
+            </Text>
+            <BoxTraits personality={personality} extended={false} lifestyle={lifestyle} alignement={alignement}/>
+            <BoxPhysics physics={physics} extended={false}/>
           </ScrollView>
       </View>
     );

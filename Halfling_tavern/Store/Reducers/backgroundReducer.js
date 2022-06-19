@@ -19,7 +19,8 @@ const bkackgroundSlice = createSlice({
     languages: [],
     abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0},
     speed: 0,
-    equipments: []
+    equipments: [],
+    personality: {Specialty: "", Personality: "", Ideal: "", Bond: "", Flaw: ""}
   }],
   raceId: 0,
   backgroundId: 0,
@@ -94,6 +95,14 @@ const bkackgroundSlice = createSlice({
       state.background[action.payload.id].savings = action.payload.value.savings
       state.background[action.payload.id].abilities = [action.payload.value.abilities, ...state.background[action.payload.id].abilities]
     },
+    backgroundAddPersonality: (state, action) => {
+      sizeUp(state, action)
+      state.background[action.payload.id].personality[action.payload.value.field] = action.payload.value.value
+    },
+    backgroundRemovePersonality: (state, action) => {
+      sizeUp(state, action)
+      state.background[action.payload.id].personality[action.payload.value.field] = ""
+    },
     backgroundReset: (state, action) => {
       sizeUp(state, action)
       Object.assign(state.background[action.payload.id], { race: "", clas: "", skills: [], savings: [""], proficiencies: [""], abilities: [], languages: [], abilityScore: {Strength: 0, Dexterity: 0, Constitution: 0, Intelligence: 0, Wisdom: 0, Charisma: 0}, speed: 0})
@@ -132,5 +141,5 @@ const bkackgroundSlice = createSlice({
 })
   
   export const {backgroundAddSkill, backgroundRemoveSkill, backgroundAddbackground, backgroundAddLanguage, backgroundRemoveLanguage, backgroundAddAbilityScore, backgroundRemoveAbilityScore, backgroundAddLanguages, backgroundAddProficiencies, reset, backgroundAddAbilities,
-    setRaceId, backgroundSetStats, backgroundAddEquipments, backgroundSetTraits, backgroundSetLifestyle, backgroundSetAlignment, setBackgroundId } = bkackgroundSlice.actions
+    setRaceId, backgroundSetStats, backgroundAddEquipments, backgroundSetTraits, backgroundSetLifestyle, backgroundSetAlignment, setBackgroundId, backgroundAddPersonality, backgroundRemovePersonality } = bkackgroundSlice.actions
   export default bkackgroundSlice.reducer;

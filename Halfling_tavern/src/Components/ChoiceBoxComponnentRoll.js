@@ -9,7 +9,7 @@ import {
   } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { useDispatch } from 'react-redux'
-import { backgroundAddAbilityScore, backgroundRemoveAbilityScore, backgroundAddLanguage, backgroundRemoveLanguage, backgroundAddSkill, backgroundRemoveSkill } from '../../Store/Reducers/backgroundReducer';
+import { backgroundAddAbilityScore, backgroundRemoveAbilityScore, backgroundAddLanguage, backgroundRemoveLanguage, backgroundAddSkill, backgroundRemoveSkill, backgroundAddPersonality, backgroundRemovePersonality } from '../../Store/Reducers/backgroundReducer';
 
 export function ChoiceBoxRoll({title, desc, choices, type, id, step}) {
     const [refresh, setRefresh] = useState(false);
@@ -21,23 +21,13 @@ export function ChoiceBoxRoll({title, desc, choices, type, id, step}) {
 
     function backgroundDispatch(newValue, item) {
         if (newValue == false) {
-            if (type == "Skills")
-                dispatch(backgroundRemoveSkill({value: item.label, id: id}))
-            if (type == "Languages")
-                dispatch(backgroundRemoveLanguage({value: item.label, id: id}))
-            if (type == "AbilityScore")
-                dispatch(backgroundRemoveAbilityScore({value: item.label, id: id}))
+            dispatch(backgroundRemovePersonality({value: title, id: id}))
             setCmp(cmp - 1)
         }
         if (newValue == true) {
             if (cmp >= 1)
                 return
-            if (type == "Skills")
-                dispatch(backgroundAddSkill({value: item.label, id: id}))
-            if (type == "Languages")
-                dispatch(backgroundAddLanguage({value: item.label, id: id}))
-            if (type == "AbilityScore")
-                dispatch(backgroundAddAbilityScore({value: item.label, id: id}))
+            dispatch(backgroundAddPersonality({value: {value: item.label, field: title}, id: id}))
             setCmp(cmp + 1)
         }
         item.checked = newValue
@@ -99,6 +89,7 @@ export function ChoiceBoxRoll({title, desc, choices, type, id, step}) {
                            choices[index].checked = false
                        }
                        choices[nbr].checked = true
+                       dispatch(backgroundAddPersonality({value: {value: choices[nbr].label, field: title}, id: id}))
                        setRefresh(!refresh)
                        setCmp(1)
                        setRolled(true)

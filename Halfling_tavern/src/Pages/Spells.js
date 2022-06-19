@@ -7,12 +7,6 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import { choicesToList } from '../services/utils';
-
-import ChoiceBoxRoll from '../Components/ChoiceBoxComponnentRoll';
-import CharacteristicsBottom from '../Components/CharacteristicsBottom';
-import ChoiceBox from '../Components/ChoiceBoxComponnent';
-import Box from '../Components/BoxComponnent';
 import spellsList from '../../Ressources/jsons/spells.json'
 import SpellChoice from '../Components/SpellChoice';
 
