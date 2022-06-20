@@ -6,8 +6,8 @@
       "SavesFormatted": ["Intelligence", "Wisdom"],
       "Proficiencies": ["Daggers", "darts", "slings", "quarterstaffs", "light crossbows"]
     },
-    "races": ["Half-Elf"],
-    "id": 1,
+    "races": ["High-Elf"],
+    "id": 2,
     "Description": "A scholarly magic-user capable of manipulating the structures of reality.",
     "Abilities": [
       {
@@ -73,19 +73,19 @@
       [
          {
             "choice": 1,
-            "choices": ["Rapier", "Longsword", "Simple Weapon"]
+            "choices": ["Quarterstaff", "Dagger"]
          },
          {
             "choice": 1,
-            "choices": ["Diplomat's pack", "Entertainer’s pack"]
+            "choices": ["Component pouch", "Arcane focus"]
          },
          {
             "choice": 1,
-            "choices": ["Lute", "Any other musical instrument"]
+            "choices": ["Scholar’s pack", "Explorer’s pack"]
          },
          {
             "choice": 0,
-            "choices": ["Leather armor", "Dagger"]
+            "choices": ["Spellbook"]
          }
       ]
  }

@@ -14,7 +14,7 @@ import { choicesToList } from '../../services/utils';
 import ClassTop from './ClassTop';
 import EquipmentsChoice from '../EquipmentsChoice';
 
-var imageList = [require("../../../Ressources/guerrier.jpg"), require("../../../Ressources/wizard.jpg")]
+var imageList = ["", require("../../../Ressources/guerrier.jpg"), require("../../../Ressources/wizard.jpg")]
 function ClassDisplay({clas, race, navigation, infos, id}) {
     let list = choicesToList(infos.Proficiencies.choices)
 
@@ -58,7 +58,7 @@ function ClassDisplay({clas, race, navigation, infos, id}) {
                 <ChoiceBoxList title={infos.Proficiencies.title} desc={infos.Proficiencies.description} nb={infos.Proficiencies.choice} choices={list} type={infos.Proficiencies.type} step={"class"} id={id}/>
                 <EquipmentsChoice equipments={infos.Equipments} list={listArray} id={id}/>
             </ScrollView>
-            <ClassBottom clas={clas} navigation={navigation} infos={infos} id={infos.id}/>
+            <ClassBottom clas={clas} navigation={navigation} infos={infos} id={id}/>
         </View>
     );
 }

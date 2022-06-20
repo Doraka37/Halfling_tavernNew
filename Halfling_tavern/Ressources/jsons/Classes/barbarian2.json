@@ -159,5 +159,20 @@
     ],
     "choice": 0,
     "level": 1
-  }
+  },
+  "Equipments":
+     [
+        {
+           "choice": 1,
+           "choices": ["Greataxe", "Martial melee weapon"]
+        },
+        {
+           "choice": 1,
+           "choices": ["Two handaxes", "Simple weapon"]
+        },
+        {
+           "choice": 0,
+           "choices": ["Eplorer’s pack", "Four javelins"]
+        }
+     ]
 }

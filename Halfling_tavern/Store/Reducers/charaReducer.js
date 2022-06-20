@@ -59,7 +59,7 @@ const charaSlice = createSlice({
     },
     classAddEquipment: (state, action) => {
       sizeUp(state, action)
-      state.class[action.payload.id].equipments = [action.payload.value, ...state.class[action.payload.id].equipments]
+      state.class[action.payload.id].equipments.push(action.payload.value)
     },
     classAddEquipments: (state, action) => {
       sizeUp(state, action)
