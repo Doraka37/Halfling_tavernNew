@@ -6,8 +6,6 @@ import {
   } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import ClassDisplay from '../Components/Classes/ClassDisplay';
-import infosBarbarian from "../../Ressources/jsons/barbarian.json"
-import infosWizard from "../../Ressources/jsons/wizard.json"
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);

@@ -6,8 +6,12 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
+  LogBox,
 } from 'react-native';
 import SheetResume from '../Components/SheetResume';
+
+
+LogBox.ignoreAllLogs()
 
 export function Home(props) {
     return (

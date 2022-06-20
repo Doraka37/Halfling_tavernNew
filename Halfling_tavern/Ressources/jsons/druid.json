@@ -1,0 +1,169 @@
+{
+  "stats": {
+    "HitDice": "1d8 ",
+    "Primary": "Wisdom",
+    "Saves": "Intelligence & Wisdom",
+    "SavesFormatted": [
+      "Intelligence",
+      "Wisdom"
+    ],
+    "Proficiencies": [
+      "Light armor",
+      "medium armor",
+      "shields",
+      "Clubs",
+      "daggers",
+      "darts",
+      "javelins",
+      "maces",
+      "quarterstaffs",
+      "scimitars",
+      "sickles",
+      "slings",
+      "spears",
+      "Herbalism kit"
+    ]
+  },
+  "races": [
+  ],
+  "id": 0,
+  "Description": "A fierce warrior of primitive background who can enter a battle rage.",
+  "Abilities": [
+    {
+      "title": "Druidic",
+      "description": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message’s presence with a successful DC 15 Wisdom (Perception) check but can’t decipher it without magic.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Spellcasting",
+      "description": "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Wild Shape",
+      "description": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.Your druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn’t have a flying or swimming speed.",
+      "choice": 0,
+      "level": 2
+    },
+    {
+      "title": "Druid Circle",
+      "description": "At 2nd level, you choose to identify with a circle of druids: the Circle of the Land or the Circle of the Moon, both detailed at the end of the class description. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level.",
+      "choice": 0,
+      "level": 2
+    },
+    {
+      "title": "Ability Score Improvement",
+      "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.",
+      "choice": 0,
+      "level": 4
+    },
+    {
+      "title": "Timeless Body",
+      "description": "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year.",
+      "choice": 0,
+      "level": 18
+    },
+    {
+      "title": "Beast Spells",
+      "description": "Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren’t able to provide material components.",
+      "choice": 0,
+      "level": 18
+    },
+    {
+      "title": "Archdruid",
+      "description": "At 20th level, you can use your Wild Shape an unlimited number of times.Additionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren’t consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape.",
+      "choice": 0,
+      "level": 20
+    },
+    {
+      "title": "Circle of the Land",
+      "description": "The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle’s wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle’s mysterious rites.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Sacred Plants and Wood",
+      "description": "A druid holds certain plants to be sacred, particularly alder, ash, birch, elder, hazel, holly, juniper, mistletoe, oak, rowan, willow, and yew. Druids often use such plants as part of a spellcasting focus, incorporating lengths of oak or yew or sprigs of mistletoe.Similarly, a druid uses such woods to make other objects, such as weapons and shields. Yew is associated with death and rebirth, so weapon handles for scimitars or sickles might be fashioned from it. Ash is associated with life and oak with strength. These woods make excellent hafts or whole weapons, such as clubs or quarterstaffs, as well as shields. Alder is associated with air, and it might be used for thrown weapons, such as darts or javelins.Druids from regions that lack the plants described here have chosen other plants to take on similar uses. For instance, a druid of a desert region might value the yucca tree and cactus plants.",
+      "choice": 0,
+      "level": 1
+    }
+  ],
+  "Proficiencies": {
+    "title": "Proficiencies",
+    "description": [
+      {
+        "title": "Armor",
+        "desc": "Light armor, medium armor, shields"
+      },
+      {
+        "title": "Weapons",
+        "desc": "Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears"
+      },
+      {
+        "title": "Tools",
+        "desc": "Herbalism kit"
+      },
+      {
+        "title": "Saving Throws",
+        "desc": "Intelligence, Wisdom"
+      },
+      {
+        "title": "Skills",
+        "desc": "Choose two from: "
+      }
+    ],
+    "choice": 2,
+    "choices": [
+      "Arcana",
+      "Animal Handling",
+      "Insight",
+      "Medicine",
+      "Nature",
+      "Perception",
+      "Religion",
+      "Survival"
+    ],
+    "type": "Skills",
+    "level": 1
+  },
+  "HitPoints": {
+    "title": "Hit Points",
+    "description": [
+      {
+        "title": "Hit Dice",
+        "desc": "1d8 per druid level"
+      },
+      {
+        "title": "Hit Points at 1st Level",
+        "desc": "8 + your Constitution modifier"
+      },
+      {
+        "title": "Hit Points at Higher Levels",
+        "desc": "1d8 (or 5) + your Constitution modifier per druid level after 1st"
+      }
+    ],
+    "choice": 0,
+    "level": 1
+  },
+  "Equipments":
+      [
+         {
+            "choice": 1,
+            "choices": ["Rapier", "Longsword", "Simple Weapon"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Diplomat's pack", "Entertainer’s pack"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Lute", "Any other musical instrument"]
+         },
+         {
+            "choice": 0,
+            "choices": ["Leather armor", "Dagger"]
+         }
+      ]
+}

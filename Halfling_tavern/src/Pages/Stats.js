@@ -257,13 +257,24 @@ export function Stats(props) {
                 <NumberField setNumber={setNumber} setRemaining={setRemaining} text={"Intelligence"} number={number} id={3}/>
                 <NumberField setNumber={setNumber} setRemaining={setRemaining} text={"Wisdom"} number={number} id={4}/>
                 <NumberField setNumber={setNumber} setRemaining={setRemaining} text={"Charisma"} number={number} id={5}/>
-                <Button
+                <TouchableOpacity style={{
+                    backgroundColor: "#330606",
+                    width: "100%",
+                    height: "8%"
+                }}
                     onPress={() => {
                         validate(number, props.navigation)
-                    }}
-                    title="Validate"
-                    color="#330606"
-                />
+                    }
+                }>
+                    <View style={{
+                        backgroundColor: "#330606",
+                        width: "100%",
+                    }}>
+                        <Text style={{fontSize: 55, fontFamily: "dungeon", marginTop: "1%", textAlign: "center", color: "white"}}>
+                            Validate
+                        </Text>
+                    </View>
+                </TouchableOpacity>
             </View>
           );
     }
@@ -284,13 +295,24 @@ export function Stats(props) {
                 <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Intelligence"} number={number} id={3} array={array} setArray={setArray}/>
                 <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Wisdom"} number={number} id={4} array={array} setArray={setArray}/>
                 <NumberDropDown setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Charisma"} number={number} id={5} array={array} setArray={setArray}/>
-                <Button
+                <TouchableOpacity style={{
+                    backgroundColor: "#330606",
+                    width: "100%",
+                    height: "8%"
+                }}
                     onPress={() => {
                         validate(number, props.navigation)
-                    }}
-                    title="Validate"
-                    color="#330606"
-                />
+                    }
+                }>
+                    <View style={{
+                        backgroundColor: "#330606",
+                        width: "100%",
+                    }}>
+                        <Text style={{fontSize: 55, fontFamily: "dungeon", marginTop: "1%", textAlign: "center", color: "white"}}>
+                            Validate
+                        </Text>
+                    </View>
+                </TouchableOpacity>
             </View>
           );
     }
@@ -312,13 +334,24 @@ export function Stats(props) {
                 <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Intelligence"} number={number} rolled={rolled} setRolled={setRolled} id={3}/>
                 <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Wisdom"} number={number} rolled={rolled} setRolled={setRolled} id={4}/>
                 <NumberManual setNumber={setNumber} setRefresh={setRefresh} refresh={refresh} text={"Charisma"} number={number} rolled={rolled} setRolled={setRolled} id={5}/>
-                <Button
+                <TouchableOpacity style={{
+                    backgroundColor: "#330606",
+                    width: "100%",
+                    height: "8%"
+                }}
                     onPress={() => {
                         validate(number, props.navigation)
-                    }}
-                    title="Validate"
-                    color="#330606"
-                />
+                    }
+                }>
+                    <View style={{
+                        backgroundColor: "#330606",
+                        width: "100%",
+                    }}>
+                        <Text style={{fontSize: 55, fontFamily: "dungeon", marginTop: "1%", textAlign: "center", color: "white"}}>
+                            Validate
+                        </Text>
+                    </View>
+                </TouchableOpacity>
             </View>
           );
     }

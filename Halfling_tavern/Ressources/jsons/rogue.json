@@ -1,0 +1,165 @@
+{
+  "stats": {
+    "HitDice": "1d8",
+    "Primary": "Dexterity",
+    "Saves": "Dexterity & Intelligence",
+    "SavesFormatted": [
+      "Dexterity",
+      "Intelligence"
+    ],
+    "Proficiencies": [
+      "Light armor",
+      "Simple weapons",
+      "hand crossbows",
+      "longswords",
+      "rapiers",
+      "shortswords",
+      "Thieves’ tools"
+    ]
+  },
+  "races": [
+  ],
+  "id": 0,
+  "Description": "A fierce warrior of primitive background who can enter a battle rage.",
+  "Abilities": [
+    {
+      "title": "Thieves’ Cant",
+      "description": "During your rogue training you learned thieves’ cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves’ guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Cunning Action",
+      "description": "Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.",
+      "choice": 0,
+      "level": 2
+    },
+    {
+      "title": "Roguish Archetype",
+      "description": "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities: Thief, Assassin, or Arcane Trickster, all detailed at the end of the class description. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level.",
+      "choice": 0,
+      "level": 3
+    },
+    {
+      "title": "Ability Score Improvement",
+      "description": "When you reach 4th level, and again at 8th, 10th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.",
+      "choice": 0,
+      "level": 4
+    },
+    {
+      "title": "Uncanny Dodge",
+      "description": "Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.",
+      "choice": 0,
+      "level": 5
+    },
+    {
+      "title": "Evasion",
+      "description": "Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon’s fiery breath or an *ice storm* spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
+      "choice": 0,
+      "level": 7
+    },
+    {
+      "title": "Reliable Talent",
+      "description": "By 11th level, you have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10.",
+      "choice": 0,
+      "level": 11
+    },
+    {
+      "title": "Blindsense",
+      "description": "Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you.",
+      "choice": 0,
+      "level": 14
+    },
+    {
+      "title": "Slippery Mind",
+      "description": "By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws.",
+      "choice": 0,
+      "level": 15
+    },
+    {
+      "title": "Elusive",
+      "description": "Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren’t incapacitated.",
+      "choice": 0,
+      "level": 18
+    }
+  ],
+  "Proficiencies": {
+    "title": "Proficiencies",
+    "description": [
+      {
+        "title": "Armor",
+        "desc": "Light armor"
+      },
+      {
+        "title": "Weapons",
+        "desc": "Simple weapons, hand crossbows, longswords, rapiers, shortswords"
+      },
+      {
+        "title": "Tools",
+        "desc": "Thieves’ tools"
+      },
+      {
+        "title": "Saving Throws",
+        "desc": "Dexterity, Intelligence"
+      },
+      {
+        "title": "Skills",
+        "desc": "Choose two from: "
+      }
+    ],
+    "choice": 4,
+    "choices": [
+      "Acrobatics",
+      "Athletics",
+      "Deception",
+      "Insight",
+      "Intimidation",
+      "Investigation",
+      "Perception",
+      "Performance",
+      "Persuasion",
+      "Sleight of Hand",
+      "Stealth"
+    ],
+    "type": "Skills",
+    "level": 1
+  },
+  "HitPoints": {
+    "title": "Hit Points",
+    "description": [
+      {
+        "title": "Hit Dice",
+        "desc": "1d8 per rogue level"
+      },
+      {
+        "title": "Hit Points at 1st Level",
+        "desc": "8 + your Constitution modifier"
+      },
+      {
+        "title": "Hit Points at Higher Levels",
+        "desc": "1d8 (or 5) + your Constitution modifier per rogue level after 1st"
+      }
+    ],
+    "choice": 0,
+    "level": 1
+  },
+  "Equipments":
+      [
+         {
+            "choice": 1,
+            "choices": ["Rapier", "Longsword", "Simple Weapon"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Diplomat's pack", "Entertainer’s pack"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Lute", "Any other musical instrument"]
+         },
+         {
+            "choice": 0,
+            "choices": ["Leather armor", "Dagger"]
+         }
+      ]
+}

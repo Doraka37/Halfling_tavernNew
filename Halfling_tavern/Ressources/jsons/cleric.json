@@ -1,0 +1,132 @@
+{
+  "stats": {
+    "HitDice": "1d8",
+    "Primary": "Wisdom",
+    "Saves": "Wisdom & Charisma",
+    "SavesFormatted": [
+      "Wisdom",
+      "Charisma"
+    ],
+    "Proficiencies": [
+      "Light armor",
+      "medium armor",
+      "shields",
+      "Simple weapons"
+    ]
+  },
+  "races": [
+  ],
+  "id": 0,
+  "Description": "A fierce warrior of primitive background who can enter a battle rage.",
+  "Abilities": [
+    {
+      "title": "Spellcasting",
+      "description": "As a conduit for divine power, you can cast cleric spells.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Divine Domain",
+      "description": "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. Each domain is detailed at the end of the class description, and each one provides examples of gods associated with it. Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Channel Divinity",
+      "description": "At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.Beginning at 6th level, you can use your ChannelDivinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.",
+      "choice": 0,
+      "level": 2
+    },
+    {
+      "title": "Ability Score Improvement",
+      "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.",
+      "choice": 0,
+      "level": 4
+    },
+    {
+      "title": "Destroy Undead",
+      "description": "Starting at 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table.",
+      "choice": 0,
+      "level": 5
+    },
+    {
+      "title": "Divine Intervention",
+      "description": "Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great.Imploring your deity’s aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.If your deity intervenes, you can’t use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.At 20th level, your call for intervention succeeds automatically, no roll required.",
+      "choice": 0,
+      "level": 10
+    }
+  ],
+  "Proficiencies": {
+    "title": "Proficiencies",
+    "description": [
+      {
+        "title": "Armor",
+        "desc": "Light armor, medium armor, shields"
+      },
+      {
+        "title": "Weapons",
+        "desc": "Simple weapons"
+      },
+      {
+        "title": "Tools",
+        "desc": "None"
+      },
+      {
+        "title": "Saving Throws",
+        "desc": "Wisdom, Charisma"
+      },
+      {
+        "title": "Skills",
+        "desc": "Choose two from: "
+      }
+    ],
+    "choice": 2,
+    "choices": [
+      "History",
+      "Insight",
+      "Medicine",
+      "Persuasion",
+      "Religion"
+    ],
+    "type": "Skills",
+    "level": 1
+  },
+  "HitPoints": {
+    "title": "Hit Points",
+    "description": [
+      {
+        "title": "Hit Dice",
+        "desc": "1d8 per cleric level"
+      },
+      {
+        "title": "Hit Points at 1st Level",
+        "desc": "8 + your Constitution modifier"
+      },
+      {
+        "title": "Hit Points at Higher Levels",
+        "desc": "1d8 (or 5) + your Constitution modifier per cleric level after 1st"
+      }
+    ],
+    "choice": 0,
+    "level": 1
+  },
+  "Equipments":
+      [
+         {
+            "choice": 1,
+            "choices": ["Rapier", "Longsword", "Simple Weapon"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Diplomat's pack", "Entertainer’s pack"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Lute", "Any other musical instrument"]
+         },
+         {
+            "choice": 0,
+            "choices": ["Leather armor", "Dagger"]
+         }
+      ]
+}

@@ -97,6 +97,7 @@ const bkackgroundSlice = createSlice({
     },
     backgroundAddPersonality: (state, action) => {
       sizeUp(state, action)
+      console.log('oskour: ', action.payload.value);
       state.background[action.payload.id].personality[action.payload.value.field] = action.payload.value.value
     },
     backgroundRemovePersonality: (state, action) => {

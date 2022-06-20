@@ -1,0 +1,132 @@
+{
+  "stats": {
+    "HitDice": "1d12",
+    "Primary": "Charisma",
+    "Saves": "Wisdom & Charisma",
+    "SavesFormatted": [
+      "Wisdom",
+      "Charisma"
+    ],
+    "Proficiencies": [
+      "Light armor",
+      "Simple weapons"
+    ]
+  },
+  "races": [
+  ],
+  "id": 0,
+  "Description": "A fierce warrior of primitive background who can enter a battle rage.",
+  "Abilities": [
+    {
+      "title": "Otherworldly Patron",
+      "description": "At 1st level, you have struck a bargain with an otherworldly being of your choice: the Archfey, the Fiend, or the Great Old One, each of which is detailed at the end of the class description. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Pact Magic",
+      "description": "Your arcane research and the magic bestowed on you by your patron have given you facility with spells.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Eldritch Invocations",
+      "description": "In your study of occult lore, you have unearthed eldritch invocations, fragments of forbidden knowledge that imbue you with an abiding magical ability.At 2nd level, you gain two eldritch invocations of your choice. Your invocation options are detailed at the end of the class description. When you gain certain warlock levels, you gain additional invocations of your choice, as shown in the Invocations Known column of the Warlock table.Additionally, when you gain a level in this class, you can choose one of the invocations you know and replace it with another invocation that you could learn at that level.",
+      "choice": 0,
+      "level": 2
+    },
+    {
+      "title": "Pact Boon",
+      "description": "At 3rd level, your otherworldly patron bestows a gift upon you for your loyal service. You gain one of the following features of your choice.",
+      "choice": 0,
+      "level": 3
+    },
+    {
+      "title": "Ability Score Improvement",
+      "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.",
+      "choice": 0,
+      "level": 4
+    },
+    {
+      "title": "Mystic Arcanum",
+      "description": "At 11th level, your patron bestows upon you a magical secret called an arcanum. Choose one 6th- level spell from the warlock spell list as this arcanum.You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th- level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.",
+      "choice": 0,
+      "level": 11
+    }
+  ],
+  "Proficiencies": {
+    "title": "Proficiencies",
+    "description": [
+      {
+        "title": "Armor",
+        "desc": "Light armor"
+      },
+      {
+        "title": "Weapons",
+        "desc": "Simple weapons"
+      },
+      {
+        "title": "Tools",
+        "desc": "None"
+      },
+      {
+        "title": "Saving Throws",
+        "desc": "Wisdom, Charisma"
+      },
+      {
+        "title": "Skills",
+        "desc": "Choose two from: "
+      }
+    ],
+    "choice": 2,
+    "choices": [
+      "Arcana",
+      "Deception",
+      "History",
+      "Intimidation",
+      "Investigation",
+      "Nature",
+      "Religion"
+    ],
+    "type": "Skills",
+    "level": 1
+  },
+  "HitPoints": {
+    "title": "Hit Points",
+    "description": [
+      {
+        "title": "Hit Dice",
+        "desc": "1d8 per warlock level"
+      },
+      {
+        "title": "Hit Points at 1st Level",
+        "desc": "8 + your Constitution modifier"
+      },
+      {
+        "title": "Hit Points at Higher Levels",
+        "desc": "1d8 (or 5) + your Constitution modifier per warlock level after 1st"
+      }
+    ],
+    "choice": 0,
+    "level": 1
+  },
+  "Equipments":
+      [
+         {
+            "choice": 1,
+            "choices": ["Rapier", "Longsword", "Simple Weapon"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Diplomat's pack", "Entertainer’s pack"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Lute", "Any other musical instrument"]
+         },
+         {
+            "choice": 0,
+            "choices": ["Leather armor", "Dagger"]
+         }
+      ]
+}

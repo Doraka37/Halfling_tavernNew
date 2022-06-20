@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "HitDice": "1d6",
+    "Primary": "Charisma",
+    "Saves": "Constitution & Charisma",
+    "SavesFormatted": [
+      "Constitution",
+      "Charisma"
+    ],
+    "Proficiencies": [
+      "Daggers",
+      "darts",
+      "slings",
+      "quarterstaffs",
+      "light crossbows"
+    ]
+  },
+  "races": [
+    "Half-Elf"
+  ],
+  "id": 0,
+  "Description": "A fierce warrior of primitive background who can enter a battle rage.",
+  "Abilities": [
+    {
+      "title": "Spellcasting",
+      "description": "An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Sorcerous Origin",
+      "description": "Choose a sorcerous origin, which describes the source of your innate magical power: Draconic Bloodline or Wild Magic, both detailed at the end of the class description.Your choice grants you features when you choose it at 1st level and again at 6th, 14th, and 18th level.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Font of Magic",
+      "description": "At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.",
+      "choice": 0,
+      "level": 2
+    },
+    {
+      "title": "Metamagic",
+      "description": "At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level.You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.",
+      "choice": 0,
+      "level": 3
+    },
+    {
+      "title": "Ability Score Improvement",
+      "description": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.",
+      "choice": 0,
+      "level": 4
+    }
+  ],
+  "Proficiencies": {
+    "title": "Proficiencies",
+    "description": [
+      {
+        "title": "Armor",
+        "desc": "None"
+      },
+      {
+        "title": "Weapons",
+        "desc": "Daggers, darts, slings, quarterstaffs, light crossbows"
+      },
+      {
+        "title": "Tools",
+        "desc": "None"
+      },
+      {
+        "title": "Saving Throws",
+        "desc": "Constitution, Charisma"
+      },
+      {
+        "title": "Skills",
+        "desc": "Choose two from: "
+      }
+    ],
+    "choice": 2,
+    "choices": [
+      "Arcana",
+      "Deception",
+      "Insight",
+      "Intimidation",
+      "Persuasion",
+      "Religion"
+    ],
+    "type": "Skills",
+    "level": 1
+  },
+  "HitPoints": {
+    "title": "Hit Points",
+    "description": [
+      {
+        "title": "Hit Dice",
+        "desc": "1d6 per sorcerer level"
+      },
+      {
+        "title": "Hit Points at 1st Level",
+        "desc": "6 + your Constitution modifier"
+      },
+      {
+        "title": "Hit Points at Higher Levels",
+        "desc": "1d6 (or 4) + your Constitution modifier per sorcerer level after 1st"
+      }
+    ],
+    "choice": 0,
+    "level": 1
+  },
+  "Equipments":
+      [
+         {
+            "choice": 1,
+            "choices": ["Rapier", "Longsword", "Simple Weapon"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Diplomat's pack", "Entertainer’s pack"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Lute", "Any other musical instrument"]
+         },
+         {
+            "choice": 0,
+            "choices": ["Leather armor", "Dagger"]
+         }
+      ]
+}

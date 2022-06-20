@@ -1,0 +1,135 @@
+{
+  "stats": {
+    "HitDice": "1d10",
+    "Primary": "Strenght",
+    "Saves": "Strenght & Constitution",
+    "SavesFormatted": [
+      "Strenght",
+      "Constitution"
+    ],
+    "Proficiencies": [
+      "All armor",
+      "shields",
+      "Simple weapons",
+      "martial weapons"
+    ]
+  },
+  "races": [
+  ],
+  "id": 0,
+  "Description": "A fierce warrior of primitive background who can enter a battle rage.",
+  "Abilities": [
+    {
+      "title": "Fighting Style",
+      "description": "You adopt a particular style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Second Wind",
+      "description": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.",
+      "choice": 0,
+      "level": 1
+    },
+    {
+      "title": "Action Surge",
+      "description": "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.",
+      "choice": 0,
+      "level": 2
+    },
+    {
+      "title": "Martial Archetype",
+      "description": "At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques. Choose Champion, Battle Master, or Eldritch Knight, all detailed at the end of the class description. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level.",
+      "choice": 0,
+      "level": 3
+    },
+    {
+      "title": "Ability Score Improvement",
+      "description": "When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.",
+      "choice": 0,
+      "level": 4
+    },
+    {
+      "title": "Extra Attack",
+      "description": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.The number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class.",
+      "choice": 0,
+      "level": 5
+    }
+  ],
+  "Proficiencies": {
+    "title": "Proficiencies",
+    "description": [
+      {
+        "title": "Armor",
+        "desc": "All armor, shields"
+      },
+      {
+        "title": "Weapons",
+        "desc": "Simple weapons, martial weapons"
+      },
+      {
+        "title": "Tools",
+        "desc": "None"
+      },
+      {
+        "title": "Saving Throws",
+        "desc": "Strength, Constitution"
+      },
+      {
+        "title": "Skills",
+        "desc": "Choose two from: "
+      }
+    ],
+    "choice": 2,
+    "choices": [
+      "Acrobatics",
+      "Animal Handling",
+      "Athletics",
+      "History",
+      "Insight",
+      "Intimidation",
+      "Perception",
+      "Survival"
+    ],
+    "type": "Skills",
+    "level": 1
+  },
+  "HitPoints": {
+    "title": "Hit Points",
+    "description": [
+      {
+        "title": "Hit Dice",
+        "desc": "1d10 per fighter level"
+      },
+      {
+        "title": "Hit Points at 1st Level",
+        "desc": "10 + your Constitution modifier"
+      },
+      {
+        "title": "Hit Points at Higher Levels",
+        "desc": "1d10 (or 6) + your Constitution modifier per fighter level after 1st"
+      }
+    ],
+    "choice": 0,
+    "level": 1
+  },
+  "Equipments":
+      [
+         {
+            "choice": 1,
+            "choices": ["Rapier", "Longsword", "Simple Weapon"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Diplomat's pack", "Entertainer’s pack"]
+         },
+         {
+            "choice": 1,
+            "choices": ["Lute", "Any other musical instrument"]
+         },
+         {
+            "choice": 0,
+            "choices": ["Leather armor", "Dagger"]
+         }
+      ]
+}
