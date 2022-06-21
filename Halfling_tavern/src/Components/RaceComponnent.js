@@ -5,21 +5,20 @@ import {
   } from 'react-native';
 import RaceDisplay from './Races/RaceDisplay';
 import SubRace from './Races/SubRace';
-import half_elf from "../../Ressources/jsons/half_elf.json"
 
-export function RaceComponnent({id, race, navigation, reset, setReset, infos}) {
-    switch(id){
-        case 0:
-            return <RaceDisplay race={race} id={id} navigation={navigation} infos={infos} reset={reset} setReset={setReset}/>
-        case 1:
-            return <SubRace race={race} id={id} navigation={navigation}/>
+export function RaceComponnent({id, race, navigation, infos, subrace}) {
+    switch(subrace){
+        case false:
+            return <RaceDisplay race={race} id={id} navigation={navigation} infos={infos}/>
+        case true:
+            return <SubRace race={race} id={id} navigation={navigation} infos={infos} />
         default:
             return <View style={{
                 backgroundColor: "#330606",
                 width: "100%",
             }}>
                 <Text style={{fontSize: 60, fontFamily: "dungeon", marginTop: -10, textAlign: "center"}}>
-                    Choisir cette race3
+                    Choisir cette race
                 </Text>
             </View>
     }

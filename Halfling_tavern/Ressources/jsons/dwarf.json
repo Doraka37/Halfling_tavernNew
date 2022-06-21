@@ -1,0 +1,129 @@
+{
+   "Race": "Dwarf",
+   "id": -1,
+   "Description": "Kingdoms rich in ancient grandeur, halls carved into the roots of mountains, the echoing of picks and hammers in deep mines and blazing forges, a commitment to clan and tradition, and a burning hatred of goblins and orcs—these common threads unite all dwarves.",
+   "SubRaces": [
+      {
+         "Race": "Hill Dwarf",
+         "Description": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.",
+         "id": 3,
+         "Abilities": [
+            {
+               "title":"Darkvision",
+               "description":"Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim lightwithin 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Dwarven Resilience",
+               "description":"You have advantage on saving throws against poison, and you have resistance against poison damage.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Dwarven Combat Training",
+               "description":"You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Tool Proficiency",
+               "description":"You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Ability Score Increase",
+               "description":"Your Constitution score increases by 2",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Stonecunning",
+               "description":"Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Languages",
+               "description":"You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak.",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Ability Score Increase",
+               "description":"Your Wisdom score increases by 1",
+               "choice": 0,
+               "level": 1
+            },
+            {
+               "title":"Dwarven Toughness",
+               "description":"Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
+               "choice": 0,
+               "level": 1
+            }
+         ]
+      },
+      {
+         "Race": "Mountain Dwarf",
+         "Description": "As a mountain dwarf, you’re strong and hardy, accustomed to a difficult life in rugged terrain. You’re probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerûn, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.",
+         "id": 4,
+         "Abilities": [
+           {
+              "title":"Darkvision",
+              "description":"Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim lightwithin 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.",
+              "choice": 0,
+              "level": 1
+           },
+           {
+              "title":"Dwarven Resilience",
+              "description":"You have advantage on saving throws against poison, and you have resistance against poison damage.",
+              "choice": 0,
+              "level": 1
+           },
+           {
+              "title":"Dwarven Combat Training",
+              "description":"You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
+              "choice": 0,
+              "level": 1
+           },
+           {
+              "title":"Tool Proficiency",
+              "description":"You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.",
+              "choice": 0,
+              "level": 1
+           },
+           {
+              "title":"Ability Score Increase",
+              "description":"Your Constitution score increases by 2",
+              "choice": 0,
+              "level": 1
+           },
+           {
+              "title":"Stonecunning",
+              "description":"Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.",
+              "choice": 0,
+              "level": 1
+           },
+           {
+              "title":"Languages",
+              "description":"You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and those characteristics spill over into whatever other language a dwarf might speak.",
+              "choice": 0,
+              "level": 1
+           },
+           {
+              "title":"Ability Score Increase",
+              "description":"Your Strength score increases by 2.",
+              "choice": 0,
+              "level": 1
+           },
+           {
+              "title":"Dwarven Armor Training",
+              "description":"You have proficiency with light and medium armor.",
+              "choice": 0,
+              "level": 1
+           }
+         ]
+      }
+   ]
+ }

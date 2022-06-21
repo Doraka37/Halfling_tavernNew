@@ -1,0 +1,66 @@
+{
+   "Name": "Sage",
+   "Description": "You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study.",
+    "Abilities": [
+      {
+         "title":"Researcher",
+         "description":"When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.",
+         "choice": 0,
+         "level": 0
+      }
+   ],
+   "Proficiencies": ["Arcana", "History"],
+   "Equipments": [" A bottle of black ink", "a quill", "a small knife", "a letter from a dead colleague posing a question you have not yet been able to answer", "common clothes"],
+   "Money": [0, 0, 0, 10, 0],
+   "Languages": ["Two of your choice"],
+   "Display":{
+      "title":"Proficiencies and Equipments",
+      "description":[{"title": "Skill Proficiencies", "desc": "Arcana, History"}, {"title": "Tool Proficiencie", "desc": "Thieves'tools, One type of Gaming Set"}, {"title": "Equipment", "desc": "A bottle of black ink, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer, common clothes, 15Gp"}],
+      "level": 0
+   },
+   "Specialty":{
+         "title":"Sage Specialty",
+         "description":"To determine the nature of your scholarly training, roll a d8 or choose from the options in the table below.",
+         "choice": 1,
+         "choices": ["Alchemist", "Astronomer", "Discredited academic", "Librarian", "Professor", "Researcher", "Wizard’s apprentice", "Scribe"],
+         "level": 0
+   },
+   "Characteristics": {
+      "description":"Sages are defined by their extensive studies, and their characteristics reflect this life of study. Devoted to scholarly pursuits, a sage values knowledge highly—sometimes in its own right, sometimes as a means toward other ideals.",
+      "PersonalityTrait": [
+          "I use polysyllabic words that convey the impression of great erudition.",
+          "I’ve read every book in the world’s greatest libraries—or I like to boast that I have.",
+          "I’m used to helping out those who aren’t as smart as I am, and I patiently explain anything and everything to others.",
+          "There’s nothing I like more than a good mystery.",
+          "I’m willing to listen to every side of an argument before I make my own judgment.",
+          "I … speak … slowly … when talking … to idiots, … which … almost … everyone … is … compared … to me.",
+          "I am horribly, horribly awkward in social situations.",
+          "I’m convinced that people are always trying to steal my secrets."
+          ],
+      "Ideal": [
+        "Knowledge. The path to power and self-improvement is through knowledge. (Neutral)",
+        "Beauty. What is beautiful points us beyond itself toward what is true. (Good)",
+        "Logic. Emotions must not cloud our logical thinking. (Lawful)",
+        "No Limits. Nothing should fetter the infinite possibility inherent in all existence. (Chaotic)",
+        "Power. Knowledge is the path to power and domination. (Evil)",
+        "Self-Improvement. The goal of a life of study is the betterment of oneself. (Any)"
+        ],
+      "Bond": [
+        "It is my duty to protect my students.",
+        "I have an ancient text that holds terrible secrets that must not fall into the wrong hands.",
+        "I work to preserve a library, university, scriptorium, or monastery.",
+        "My life’s work is a series of tomes related to a specific field of lore.",
+        "I’ve been searching my whole life for the answer to a certain question.",
+        "I sold my soul for knowledge. I hope to do great deeds and win it back."
+          ],
+      "Flaw": [
+        "I am easily distracted by the promise of information.",
+        "Most people scream and run when they see a demon. I stop and take notes on its anatomy.",
+        "Unlocking an ancient mystery is worth the price of a civilization.",
+        "I overlook obvious solutions in favor of complicated ones.",
+        "I speak without really thinking through my words, invariably insulting others.",
+        "I can’t keep a secret to save my life, or anyone else’s."
+        ],
+         "level": 0
+   }
+ }

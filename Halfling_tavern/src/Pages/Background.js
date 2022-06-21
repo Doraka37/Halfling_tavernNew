@@ -12,13 +12,18 @@ import ChoiceBox from '../Components/ChoiceBoxComponnent';
 import Carousel from 'react-native-snap-carousel';
 import { choicesToList } from '../services/utils';
 
-import infosCriminal from "../../Ressources/jsons/criminal.json"
+import infosCriminal from "../../Ressources/jsons/Backgrounds/criminal.json"
+import infosAcolyte from "../../Ressources/jsons/Backgrounds/Acolyte.json"
+import infosFolkHero from "../../Ressources/jsons/Backgrounds/FolkHero.json"
+import infosNoble from "../../Ressources/jsons/Backgrounds/Noble.json"
+import infosSage from "../../Ressources/jsons/Backgrounds/Sage.json"
+import infosSoldier from "../../Ressources/jsons/Backgrounds/Soldier.json"
 import BackgroundBottom from '../Components/BackgroundBottom';
 
 const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 
-var array = [{id: 0, race: "Half-Elf", infos: infosCriminal}, {id: 1, race: "Elf", infos: infosCriminal}, {id: 2, race: "Dwarf", infos: infosCriminal}, {id: 3, race: "Gnome", infos: infosCriminal}]
+var array = [{id: 0, race: "Half-Elf", infos: infosCriminal}, {id: 1, race: "Elf", infos: infosAcolyte}, {id: 2, race: "Dwarf", infos: infosFolkHero}, {id: 3, race: "Gnome", infos: infosNoble}]
 
 export function BackgroundDisplay({navigation, infos, id}) {
 

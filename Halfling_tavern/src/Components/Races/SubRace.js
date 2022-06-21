@@ -8,11 +8,10 @@ import {
   } from 'react-native';
 
 import RaceDisplay from './RaceDisplay';
-import infos from "../../../Ressources/jsons/elf.json"
 import { useDispatch } from 'react-redux'
 import { reset } from '../../../Store/Reducers/baseReducer';
 
-function SubRace({id, race, navigation}) {
+function SubRace({id, race, navigation, infos}) {
     const [sub, setSub] = useState(1);
     const dispatch = useDispatch()
 
@@ -54,6 +53,7 @@ function SubRace({id, race, navigation}) {
           );
     }
 
+    console.log("infos: ", infos);
     return (
         <SafeAreaView style={{
             flex: 100,

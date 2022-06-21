@@ -13,6 +13,7 @@ const ITEM_WIDTH = Math.round(SLIDER_WIDTH);
 import { list } from "../../Ressources/class_array"
 import { useDispatch } from 'react-redux'
 import { setRaceId } from '../../Store/Reducers/charaReducer';
+import { choicesToList } from '../services/utils';
 
 export function TextComp({title, desc}) {
     return (
@@ -34,7 +35,8 @@ export function TextComp({title, desc}) {
 }
 
 function ClassComponnent({clas, race, navigation, raceId, infos, id}) {
-    return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infos} id={id}/>
+    let listChoice = choicesToList(infos.Proficiencies.choices)
+    return <ClassDisplay race={race} clas={clas} navigation={navigation} infos={infos} id={id} listChoice={listChoice}/>
 }
 
 export function Class(props) {
@@ -53,8 +55,8 @@ export function Class(props) {
             keyExtractor={(item) => item.id}
             sliderWidth={SLIDER_WIDTH}
             itemWidth={ITEM_WIDTH}
-            renderItem={({ item }) => (
-                <ClassComponnent clas={item.clas} race={race} navigation={props.navigation} raceId={raceId} infos={item.infos} id={item.id}/>
+            renderItem={({ item, index }) => (
+                <ClassComponnent clas={item.clas} race={race} navigation={props.navigation} raceId={raceId} infos={item.infos} id={index}/>
             )}
         />
       </View>

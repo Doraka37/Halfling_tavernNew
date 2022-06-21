@@ -12,7 +12,8 @@ import RaceTop from './RaceTop';
 import { choicesToList } from '../../services/utils';
 
 var imageList = [require("../../../Ressources/Half-Elf.png")]
-function RaceDisplay({id, race, navigation, infos, reset, setReset}) {
+function RaceDisplay({id, race, navigation, infos}) {
+
     function renderItem({item}) {
         if (item.choice != 0) {
             const list = choicesToList(item.choices)
